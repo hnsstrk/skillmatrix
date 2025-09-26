@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agile Skill Matrix – Kompetenzkatalog</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="skill-catalog">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__branding">
+        <div class="sidebar__logo">ASM</div>
+        <div class="sidebar__branding-text">
+          <h1>Agile Skill Matrix</h1>
+          <p>Team-Kompetenzen sichtbar machen</p>
+        </div>
+        <button class="sidebar__toggle" data-sidebar-toggle aria-label="Navigation minimieren" aria-expanded="true">
+          <span class="sidebar__toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav class="sidebar__nav">
+        <a class="nav-link" data-page="team-overview" href="index.html">
+          <span class="nav-link__icon" aria-hidden="true">📊</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Team-Heatmap</span>
+            <small>Kompetenzabdeckung &amp; Gaps</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
+          <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Entwicklerprofile</span>
+            <small>Ratings, Evidenzen &amp; Maßnahmen</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
+          <span class="nav-link__icon" aria-hidden="true">📚</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Kompetenzkatalog</span>
+            <small>Definitionen &amp; Lehrgänge</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="training-planner" href="training-planner.html">
+          <span class="nav-link__icon" aria-hidden="true">🗂️</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Lehrgangsplanung</span>
+            <small>Skill-Gaps schließen</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="assignment-check" href="assignment-check.html">
+          <span class="nav-link__icon" aria-hidden="true">✅</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Aufgaben-Check</span>
+            <small>Einsatzfähigkeit prüfen</small>
+          </span>
+        </a>
+      </nav>
+      <section class="sidebar__info">
+        <h2>Nächste Schritte</h2>
+        <ul>
+          <li>Self-Service Bewertung aktivieren</li>
+          <li>CSV-Export vorbereiten</li>
+          <li>Stakeholder-Review planen</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span class="badge badge--primary">MVP Mockup</span>
+          <h2>Kompetenzkatalog</h2>
+        </div>
+        <div class="topbar__actions">
+          <button class="button button--ghost">Lehrgänge verwalten</button>
+          <button class="button button--primary">Neue Kompetenz</button>
+        </div>
+      </header>
+
+      <section>
+        <article class="panel">
+          <header class="panel__header">
+            <h3>Kompetenzkatalog</h3>
+            <div class="panel__filters">
+              <select>
+                <option>Alle Kategorien</option>
+                <option>Programmiersprachen und Frameworks</option>
+                <option>Technik &amp; Qualität</option>
+                <option>DevOps und Infrastruktur</option>
+                <option>Agile Praxis</option>
+                <option>Zusammenarbeit</option>
+                <option>Spezialisierungen</option>
+              </select>
+              <input type="search" placeholder="Kompetenz suchen" />
+            </div>
+          </header>
+          <table class="catalog">
+            <thead>
+              <tr>
+                <th>Kompetenz</th>
+                <th>Beschreibung</th>
+                <th>Leitplanken</th>
+                <th>Lehrgänge</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="catalog__group">
+                <td colspan="4">
+                  <h4>Programmiersprachen und Frameworks</h4>
+                  <p>Sprachen und UI-Frameworks für Backend, Frontend und Plattformentwicklung.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Python</strong>
+                </td>
+                <td>Automatisiert Backend-Services und Data-Pipelines mit sauberer Testsuite.</td>
+                <td>Ziellevel: ≥ 4 Sterne für Backend-Champions</td>
+                <td>
+                    <span class="catalog__badge">Python FastTrack</span>
+                    <span class="catalog__badge">Data Engineering Lab</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Java</strong>
+                </td>
+                <td>Entwickelt robuste Services mit Spring & Jakarta EE inklusive CI/CD Integration.</td>
+                <td>Ziellevel: ≥ 4 Sterne für kritische Plattformen</td>
+                <td>
+                    <span class="catalog__badge">Spring Modernization</span>
+                    <span class="catalog__badge">Effective Java Patterns</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>C#</strong>
+                </td>
+                <td>Pflegt .NET-Services, modernisiert Legacy-Anteile und orchestriert APIs.</td>
+                <td>Ziellevel: 3 Sterne in aktiven .NET-Streams</td>
+                <td>
+                    <span class="catalog__badge">.NET Upgrade Clinic</span>
+                    <span class="catalog__badge">Azure Dev in Practice</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>TypeScript / JavaScript</strong>
+                </td>
+                <td>Baut typsichere Web-Anwendungen mit modernen Toolchains und Tests.</td>
+                <td>Ziellevel: 4 Sterne für Frontend-Owner</td>
+                <td>
+                    <span class="catalog__badge">TypeScript Mastery</span>
+                    <span class="catalog__badge">Testing Library Deep Dive</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Go</strong>
+                </td>
+                <td>Implementiert performante Dienste, Observability und Cloud-Native Patterns.</td>
+                <td>Ziellevel: 3 Sterne für Platform-Teams</td>
+                <td>
+                    <span class="catalog__badge">Go Microservices</span>
+                    <span class="catalog__badge">Observability mit Go</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Rust</strong>
+                </td>
+                <td>Schreibt sichere, performante Komponenten und integriert FFI/Wasmtime.</td>
+                <td>Ziellevel: 2 Sterne als Explorationslevel</td>
+                <td>
+                    <span class="catalog__badge">Rust Fundamentals</span>
+                    <span class="catalog__badge">Rust for Systems</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Kotlin</strong>
+                </td>
+                <td>Erweitert JVM- oder Android-Code basierend auf Kotlin Best Practices.</td>
+                <td>Ziellevel: 3 Sterne in JVM Squads</td>
+                <td>
+                    <span class="catalog__badge">Kotlin for Backend</span>
+                    <span class="catalog__badge">Compose Camp</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Swift</strong>
+                </td>
+                <td>Entwickelt iOS-Apps mit SwiftUI und plattformgerechten Architekturen.</td>
+                <td>Ziellevel: 3 Sterne für Mobile-Champions</td>
+                <td>
+                    <span class="catalog__badge">SwiftUI Intensiv</span>
+                    <span class="catalog__badge">iOS Architecture Clinic</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>React</strong>
+                </td>
+                <td>Pflegt komponentenbasierte Frontends, State-Management und Hooks.</td>
+                <td>Ziellevel: 4 Sterne für Experience Teams</td>
+                <td>
+                    <span class="catalog__badge">React Patterns</span>
+                    <span class="catalog__badge">Frontend Architecture Lab</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Angular</strong>
+                </td>
+                <td>Betreut Enterprise-SPAs, RxJS und modulare Architektur-Patterns.</td>
+                <td>Ziellevel: 3 Sterne in Enterprise-Streams</td>
+                <td>
+                    <span class="catalog__badge">Angular Update Workshop</span>
+                    <span class="catalog__badge">RxJS Playground</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Vue.js</strong>
+                </td>
+                <td>Setzt leichte SPAs und Design-Systems mit Vue 3 und Pinia um.</td>
+                <td>Ziellevel: 3 Sterne für Customer-Apps</td>
+                <td>
+                    <span class="catalog__badge">Vue Essentials</span>
+                    <span class="catalog__badge">Design System Studio</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Svelte</strong>
+                </td>
+                <td>Prototypisiert Micro-Frontends und Edge-freundliche Bundles.</td>
+                <td>Ziellevel: 2 Sterne für Innovationsteams</td>
+                <td>
+                    <span class="catalog__badge">Svelte Quickstart</span>
+                    <span class="catalog__badge">SvelteKit Deployment</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>SQL (z. B. PostgreSQL, MySQL)</strong>
+                </td>
+                <td>Optimiert Abfragen, Schemas und Migrationsstrategien.</td>
+                <td>Ziellevel: 4 Sterne für Data Guardians</td>
+                <td>
+                    <span class="catalog__badge">SQL Performance Clinic</span>
+                    <span class="catalog__badge">Database Migration Lab</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>NoSQL (z. B. MongoDB, DynamoDB)</strong>
+                </td>
+                <td>Modelliert dokumentenbasierte Workloads und Skalierungsstrategien.</td>
+                <td>Ziellevel: 3 Sterne für Event-Driven Use Cases</td>
+                <td>
+                    <span class="catalog__badge">NoSQL Essentials</span>
+                    <span class="catalog__badge">Cloud Datastore Patterns</span>
+                </td>
+              </tr>
+              <tr class="catalog__group">
+                <td colspan="4">
+                  <h4>Technik und Qualität</h4>
+                  <p>Engineering-Praktiken für skalierbare, wartbare und sichere Software.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Testautomatisierung (Unit-, Integrations-, End-to-End-Tests)</strong>
+                </td>
+                <td>Erstellt durchgängige Testpyramiden und stabile Pipelines.</td>
+                <td>Go-Live: mind. 3 Sterne pro kritischem Service</td>
+                <td>
+                    <span class="catalog__badge">Testing Bootcamp</span>
+                    <span class="catalog__badge">Cypress Lab</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Clean Code (Lesbarkeit, Wartbarkeit, Standards)</strong>
+                </td>
+                <td>Etabliert Coding-Guidelines und führt Pair-Refactorings durch.</td>
+                <td>Standard: 4 Sterne für Chapter Leads</td>
+                <td>
+                    <span class="catalog__badge">Clean Code Retreat</span>
+                    <span class="catalog__badge">Refactoring Dojo</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Qualitätssicherung (Code-Reviews, statische Analysen)</strong>
+                </td>
+                <td>Verankert Review-Standards und automatisierte Qualitäts-Gates.</td>
+                <td>Review-Pflicht: mind. 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Review Facilitation</span>
+                    <span class="catalog__badge">Static Analysis Setup</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Anforderungsmanagement (User Stories, Akzeptanzkriterien)</strong>
+                </td>
+                <td>Formuliert schlanke User Stories samt Impact & Definition of Done.</td>
+                <td>Product Streams: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">User Story Mapping</span>
+                    <span class="catalog__badge">BDD Discovery</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Architekturgrundlagen (Design Patterns, Modularisierung)</strong>
+                </td>
+                <td>Gestaltet modulare Systeme mit dokumentierten Schnittstellen.</td>
+                <td>Architekturboard: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Modular Architecture Lab</span>
+                    <span class="catalog__badge">Pattern Kata</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Secure Coding (OWASP Top 10, Umgang mit Secrets)</strong>
+                </td>
+                <td>Schützt Code gegen OWASP-Risiken und automatisiert Secret-Scanning.</td>
+                <td>Security-Gate: mind. 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">OWASP Hands-on</span>
+                    <span class="catalog__badge">Secrets Hardening</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Versionskontrolle (Git-Workflows, Branch-Strategien)</strong>
+                </td>
+                <td>Steuert Releases mit Trunk-, GitFlow- oder Monorepo-Ansatz.</td>
+                <td>Teamregel: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Git Strategy Clinic</span>
+                    <span class="catalog__badge">Release Automation</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>API-Design (REST, GraphQL)</strong>
+                </td>
+                <td>Plant APIs mit klaren Verträgen, Versionierung und Governance.</td>
+                <td>Gateway: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">API Design Studio</span>
+                    <span class="catalog__badge">GraphQL Federation</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Dokumentation (z. B. mit OpenAPI/Swagger)</strong>
+                </td>
+                <td>Automatisiert Living Docs und pflegt Wissensbasen.</td>
+                <td>Mind. 3 Sterne vor Übergabe</td>
+                <td>
+                    <span class="catalog__badge">Docs as Code</span>
+                    <span class="catalog__badge">OpenAPI Authoring</span>
+                </td>
+              </tr>
+              <tr class="catalog__group">
+                <td colspan="4">
+                  <h4>DevOps und Infrastruktur</h4>
+                  <p>Operative Exzellenz von Build bis Betrieb inklusive Automatisierung.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Continuous Integration / Continuous Delivery (CI/CD-Pipelines)</strong>
+                </td>
+                <td>Pflegt Pipelines mit Qualitäts-Gates, Trunk-Based-Ansatz und Rollbacks.</td>
+                <td>Produktiv: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">CI/CD Blueprints</span>
+                    <span class="catalog__badge">Progressive Delivery</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Containerisierung (Docker, Kubernetes)</strong>
+                </td>
+                <td>Baut Container-Images, Helm Charts und Deployment-Standards.</td>
+                <td>Cluster: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Kubernetes Operator Lab</span>
+                    <span class="catalog__badge">Docker Hardening</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Infrastruktur als Code (Terraform, Ansible, Pulumi)</strong>
+                </td>
+                <td>Verwaltet Infrastruktur deklarativ samt Policy-as-Code.</td>
+                <td>Ziel: 4 Sterne für Platform Squads</td>
+                <td>
+                    <span class="catalog__badge">Terraform Production</span>
+                    <span class="catalog__badge">Policy as Code</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Monitoring und Observability (Logs, Metrics, Tracing, Prometheus, Grafana)</strong>
+                </td>
+                <td>Richtet Golden Signals & Alerting für Services ein.</td>
+                <td>On-Call: mind. 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Observability Bootcamp</span>
+                    <span class="catalog__badge">Grafana Dashboards</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Cloud-Plattformen (AWS, Azure, GCP)</strong>
+                </td>
+                <td>Nutzen Landing-Zones, Identity und Kosten-Governance.</td>
+                <td>Cloud-Governance: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Cloud Foundation</span>
+                    <span class="catalog__badge">FinOps Starter</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Konfigurationsmanagement (Helm, Kustomize)</strong>
+                </td>
+                <td>Automatisiert Releases mit wiederverwendbaren Overlays.</td>
+                <td>Deployment: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Helm Playbook</span>
+                    <span class="catalog__badge">GitOps Templates</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Security im Betrieb (Vulnerability Management, Secrets Management)</strong>
+                </td>
+                <td>Verankert Patch- und Secret-Policies im Betrieb.</td>
+                <td>Security SLA: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Runtime Security</span>
+                    <span class="catalog__badge">Secrets Lifecycle</span>
+                </td>
+              </tr>
+              <tr class="catalog__group">
+                <td colspan="4">
+                  <h4>Agile Praxis</h4>
+                  <p>Routinen für wertorientierte, adaptive Produktentwicklung.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Backlog-Pflege und Refinement</strong>
+                </td>
+                <td>Pflegt priorisierte Product Backlogs inkl. Discovery-Notizen.</td>
+                <td>Sprint-Ready: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Backlog Refinement</span>
+                    <span class="catalog__badge">Story Slicing</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Aufwandsschätzung und Forecasting</strong>
+                </td>
+                <td>Verwendet geeignete Forecasting-Methoden und Flow-Metriken.</td>
+                <td>Planning: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Forecasting Clinic</span>
+                    <span class="catalog__badge">Flow Metrics 101</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Moderation von Meetings</strong>
+                </td>
+                <td>Moderiert Reviews, Retros und Workshops mit passenden Formaten.</td>
+                <td>Facilitation: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Facilitation Skills</span>
+                    <span class="catalog__badge">Liberating Structures</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Definition of Ready / Definition of Done</strong>
+                </td>
+                <td>Etabliert verbindliche DoR/DoD-Checklisten pro Team.</td>
+                <td>Quality Gate: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">DoR/DoD Canvas</span>
+                    <span class="catalog__badge">Acceptance Criteria Lab</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Iteratives Arbeiten und Feedbackzyklen</strong>
+                </td>
+                <td>Verkürzt Lernzyklen durch Experimente und Hypothesen.</td>
+                <td>Lean Learning: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Experiment Design</span>
+                    <span class="catalog__badge">Lean Feedback Loops</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Continuous Improvement (Retrospektiven umsetzen)</strong>
+                </td>
+                <td>Leitet Maßnahmen aus Retros ab und verfolgt Impact.</td>
+                <td>Retros: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Retrospektiven meistern</span>
+                    <span class="catalog__badge">Improvement Tracking</span>
+                </td>
+              </tr>
+              <tr class="catalog__group">
+                <td colspan="4">
+                  <h4>Zusammenarbeit</h4>
+                  <p>Teamkultur, Wissensaustausch und Kommunikation im Delivery-Alltag.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Code-Reviews durchführen und konstruktives Feedback geben</strong>
+                </td>
+                <td>Führt empathische Reviews mit klaren Improvement-Hinweisen.</td>
+                <td>Standard: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Review Praxis</span>
+                    <span class="catalog__badge">Feedback Frameworks</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Pair Programming und Mob Programming</strong>
+                </td>
+                <td>Setzt Pair/Mob-Formate zielgerichtet für Wissensaufbau ein.</td>
+                <td>Mob Sessions: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Pairing Patterns</span>
+                    <span class="catalog__badge">Mob Facilitation</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Dokumentation und Wissensweitergabe</strong>
+                </td>
+                <td>Pflegt Wissensbasen, Brown Bags und Lernpfade.</td>
+                <td>Knowledge: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Brown Bag Toolkit</span>
+                    <span class="catalog__badge">Tech Writing 101</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Kommunikation im Team und mit Stakeholdern</strong>
+                </td>
+                <td>Steuert Sync-Formate, Status und Erwartungsmanagement.</td>
+                <td>Stakeholder: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Stakeholder Dialog</span>
+                    <span class="catalog__badge">Team Communication</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Konfliktlösung und Moderation</strong>
+                </td>
+                <td>Moderiert Konflikte lösungsorientiert mit klaren Agreements.</td>
+                <td>Team Health: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Conflict Resolution</span>
+                    <span class="catalog__badge">Mediation Basics</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Mentoring und Coaching von Teammitgliedern</strong>
+                </td>
+                <td>Begleitet Lernpfade, Growth-Check-ins und Shadowing.</td>
+                <td>Coaching: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Mentoring Toolkit</span>
+                    <span class="catalog__badge">Coaching Skills</span>
+                </td>
+              </tr>
+              <tr class="catalog__group">
+                <td colspan="4">
+                  <h4>Spezialisierungen</h4>
+                  <p>Vertiefungen für besondere Domänen- oder Technologiekompetenzen.</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Einsatz von KI-Tools in der Softwareentwicklung (z. B. Copilot, LLMs)</strong>
+                </td>
+                <td>Etablierte Guardrails und Prompts für produktive KI-Nutzung.</td>
+                <td>AI-Playbooks: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Prompt Engineering</span>
+                    <span class="catalog__badge">Responsible AI</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Datenschutz und Compliance (DSGVO, Lizenzmanagement)</strong>
+                </td>
+                <td>Bewertet Features rechtlich und dokumentiert Auflagen.</td>
+                <td>Compliance: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Privacy Impact Lab</span>
+                    <span class="catalog__badge">License Management</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Domain-Driven Design</strong>
+                </td>
+                <td>Modelliert Bounded Contexts und Event Stormings mit Stakeholdern.</td>
+                <td>DDD-Leadership: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Event Storming</span>
+                    <span class="catalog__badge">Strategic DDD</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Sicherheitstests (SAST, DAST, Penetration Testing)</strong>
+                </td>
+                <td>Plant Security-Scans und Pen-Tests inklusive Remediation.</td>
+                <td>Security Testing: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">SAST/DAST Deep Dive</span>
+                    <span class="catalog__badge">PenTest Hands-on</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Performance-Optimierung und Skalierbarkeit</strong>
+                </td>
+                <td>Analysiert Bottlenecks, profiliert Systeme und plant Skalierung.</td>
+                <td>Performance: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Performance Clinics</span>
+                    <span class="catalog__badge">Scalability Patterns</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Mobile App Entwicklung (iOS, Android, Flutter, React Native)</strong>
+                </td>
+                <td>Lieferfähige Mobile Releases mit Monitoring und Store-Guidelines.</td>
+                <td>Mobile Delivery: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Mobile CI/CD</span>
+                    <span class="catalog__badge">Flutter & React Native</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>UI/UX-Design-Grundlagen</strong>
+                </td>
+                <td>Erstellt klickbare Prototypen und führt Usability-Tests durch.</td>
+                <td>UX Ready: 3 Sterne</td>
+                <td>
+                    <span class="catalog__badge">Design Thinking Sprint</span>
+                    <span class="catalog__badge">UX Research Basics</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Datenanalyse und Machine Learning (z. B. Pandas, TensorFlow, PyTorch)</strong>
+                </td>
+                <td>Erstellt ML-Pipelines, bewertet Modelle und erklärt Ergebnisse.</td>
+                <td>ML-Product: 4 Sterne</td>
+                <td>
+                    <span class="catalog__badge">ML Ops Starter</span>
+                    <span class="catalog__badge">Applied Data Science</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

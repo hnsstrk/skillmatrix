@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agile Skill Matrix – Entwicklerprofile</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="developer-profiles">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__branding">
+        <div class="sidebar__logo">ASM</div>
+        <div class="sidebar__branding-text">
+          <h1>Agile Skill Matrix</h1>
+          <p>Team-Kompetenzen sichtbar machen</p>
+        </div>
+        <button class="sidebar__toggle" data-sidebar-toggle aria-label="Navigation minimieren" aria-expanded="true">
+          <span class="sidebar__toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav class="sidebar__nav">
+        <a class="nav-link" data-page="team-overview" href="index.html">
+          <span class="nav-link__icon" aria-hidden="true">📊</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Team-Heatmap</span>
+            <small>Kompetenzabdeckung &amp; Gaps</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
+          <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Entwicklerprofile</span>
+            <small>Ratings, Evidenzen &amp; Maßnahmen</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
+          <span class="nav-link__icon" aria-hidden="true">📚</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Kompetenzkatalog</span>
+            <small>Definitionen &amp; Lehrgänge</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="training-planner" href="training-planner.html">
+          <span class="nav-link__icon" aria-hidden="true">🗂️</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Lehrgangsplanung</span>
+            <small>Skill-Gaps schließen</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="assignment-check" href="assignment-check.html">
+          <span class="nav-link__icon" aria-hidden="true">✅</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Aufgaben-Check</span>
+            <small>Einsatzfähigkeit prüfen</small>
+          </span>
+        </a>
+      </nav>
+      <section class="sidebar__info">
+        <h2>Nächste Schritte</h2>
+        <ul>
+          <li>Self-Service Bewertung aktivieren</li>
+          <li>CSV-Export vorbereiten</li>
+          <li>Stakeholder-Review planen</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span class="badge badge--primary">MVP Mockup</span>
+          <h2>Entwicklerprofile</h2>
+        </div>
+        <div class="topbar__actions">
+          <button class="button button--ghost">Self-Assessment einholen</button>
+          <button class="button button--primary">Profil exportieren</button>
+        </div>
+      </header>
+
+      <section>
+        <div class="panel-grid panel-grid--two">
+          <article class="panel profile">
+            <header class="panel__header">
+              <div class="profile__header">
+                <div class="avatar">S</div>
+                <div>
+                  <h3>Sarah König</h3>
+                  <p>Lead Developer · Team Alpha</p>
+                </div>
+              </div>
+              <button class="button button--ghost button--small">Profil teilen</button>
+            </header>
+            <div class="profile__ratings">
+              <div class="rating-item">
+                <div>
+                  <strong>Secure Coding (OWASP Top 10, Umgang mit Secrets)</strong>
+                  <span class="rating-item__evidence">Letztes Update: 12.09.2025 · Threat Model Epic-42</span>
+                </div>
+                <div class="rating-item__stars" data-stars="4"></div>
+              </div>
+              <div class="rating-item">
+                <div>
+                  <strong>Continuous Integration / Continuous Delivery (CI/CD-Pipelines)</strong>
+                  <span class="rating-item__evidence">Letztes Update: 01.08.2025 · Pipeline Redesign</span>
+                </div>
+                <div class="rating-item__stars" data-stars="5"></div>
+              </div>
+              <div class="rating-item">
+                <div>
+                  <strong>Testautomatisierung (Unit-, Integrations-, End-to-End-Tests)</strong>
+                  <span class="rating-item__evidence">Letztes Update: 25.08.2025 · Cypress E2E</span>
+                </div>
+                <div class="rating-item__stars" data-stars="3"></div>
+              </div>
+            </div>
+            <div class="profile__actions">
+              <button class="button button--primary">Neue Bewertung</button>
+              <button class="button button--ghost">Evidenz anhängen</button>
+            </div>
+            <footer class="profile__footer">
+              <h4>Vorgeschlagene Maßnahmen</h4>
+              <ul>
+                <li>KI-Tooling Playground – Guided Session (Q4)</li>
+                <li>Secure Coding Refresh – OWASP Fokus</li>
+              </ul>
+            </footer>
+          </article>
+
+          <article class="panel profile">
+            <header class="panel__header">
+              <div class="profile__header">
+                <div class="avatar">J</div>
+                <div>
+                  <h3>Jonas Winter</h3>
+                  <p>DevOps Engineer · Team Alpha</p>
+                </div>
+              </div>
+              <button class="button button--ghost button--small">Profil teilen</button>
+            </header>
+            <div class="profile__ratings">
+              <div class="rating-item">
+                <div>
+                  <strong>Continuous Integration / Continuous Delivery (CI/CD-Pipelines)</strong>
+                  <span class="rating-item__evidence">Letztes Update: 07.09.2025 · GitOps PoC</span>
+                </div>
+                <div class="rating-item__stars" data-stars="3"></div>
+              </div>
+              <div class="rating-item">
+                <div>
+                  <strong>Cloud-Plattformen (AWS, Azure, GCP)</strong>
+                  <span class="rating-item__evidence">Letztes Update: 15.07.2025 · Landing Zone</span>
+                </div>
+                <div class="rating-item__stars" data-stars="4"></div>
+              </div>
+              <div class="rating-item">
+                <div>
+                  <strong>Monitoring und Observability (Logs, Metrics, Tracing, Prometheus, Grafana)</strong>
+                  <span class="rating-item__evidence">Letztes Update: 29.08.2025 · Grafana Dashboards</span>
+                </div>
+                <div class="rating-item__stars" data-stars="3"></div>
+              </div>
+            </div>
+            <div class="profile__actions">
+              <button class="button button--primary">Maßnahme planen</button>
+              <button class="button button--ghost">Selbstbewertung anfragen</button>
+            </div>
+            <footer class="profile__footer">
+              <h4>Fokus Q4</h4>
+              <ul>
+                <li>Kubernetes Platform Runbook finalisieren</li>
+                <li>KI-gestützte Incident Response Pilot</li>
+              </ul>
+            </footer>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

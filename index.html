@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agile Skill Matrix – Team-Heatmap</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="team-overview">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__branding">
+        <div class="sidebar__logo">ASM</div>
+        <div class="sidebar__branding-text">
+          <h1>Agile Skill Matrix</h1>
+          <p>Team-Kompetenzen sichtbar machen</p>
+        </div>
+        <button class="sidebar__toggle" data-sidebar-toggle aria-label="Navigation minimieren" aria-expanded="true">
+          <span class="sidebar__toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav class="sidebar__nav">
+        <a class="nav-link" data-page="team-overview" href="index.html">
+          <span class="nav-link__icon" aria-hidden="true">📊</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Team-Heatmap</span>
+            <small>Kompetenzabdeckung &amp; Gaps</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
+          <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Entwicklerprofile</span>
+            <small>Ratings, Evidenzen &amp; Maßnahmen</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
+          <span class="nav-link__icon" aria-hidden="true">📚</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Kompetenzkatalog</span>
+            <small>Definitionen &amp; Lehrgänge</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="training-planner" href="training-planner.html">
+          <span class="nav-link__icon" aria-hidden="true">🗂️</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Lehrgangsplanung</span>
+            <small>Skill-Gaps schließen</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="assignment-check" href="assignment-check.html">
+          <span class="nav-link__icon" aria-hidden="true">✅</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Aufgaben-Check</span>
+            <small>Einsatzfähigkeit prüfen</small>
+          </span>
+        </a>
+      </nav>
+      <section class="sidebar__info">
+        <h2>Nächste Schritte</h2>
+        <ul>
+          <li>Self-Service Bewertung aktivieren</li>
+          <li>CSV-Export vorbereiten</li>
+          <li>Stakeholder-Review planen</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span class="badge badge--primary">MVP Mockup</span>
+          <h2>Team-Heatmap</h2>
+        </div>
+        <div class="topbar__actions">
+          <button class="button button--ghost">Feedback geben</button>
+          <button class="button button--primary">Export planen</button>
+        </div>
+      </header>
+
+      <section class="heatmap-page">
+        <article class="panel panel--full">
+          <header class="panel__header panel__header--split">
+            <div>
+              <h3>Skill-Abdeckung</h3>
+              <p class="panel__subtitle">Aktueller Überblick über Team-Kompetenzen</p>
+            </div>
+            <div class="panel__controls">
+              <label class="field-group">
+                <span>Team</span>
+                <select>
+                  <option>Team Alpha</option>
+                  <option>Team Beta</option>
+                  <option>Team Gamma</option>
+                </select>
+              </label>
+              <label class="field-group">
+                <span>Kategorie</span>
+                <select>
+                  <option>Alle Kategorien</option>
+                  <option>Programmiersprachen und Frameworks</option>
+                  <option>Technik &amp; Qualität</option>
+                  <option>DevOps und Infrastruktur</option>
+                  <option>Agile Praxis</option>
+                  <option>Zusammenarbeit</option>
+                  <option>Spezialisierungen</option>
+                </select>
+              </label>
+            </div>
+          </header>
+          <div class="heatmap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Kompetenz</th>
+                  <th>Sarah</th>
+                  <th>Jonas</th>
+                  <th>Lea</th>
+                  <th>Marco</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="heatmap__category-row">
+                  <td colspan="5">Programmiersprachen und Frameworks</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Python</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Java</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">C#</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">TypeScript / JavaScript</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Go</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="1">1 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Rust</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="1">1 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="1">1 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Kotlin</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="1">1 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Swift</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="1">1 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="1">1 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">React</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Angular</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Vue.js</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Svelte</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="1">1 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="1">1 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">SQL (z. B. PostgreSQL, MySQL)</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">NoSQL (z. B. MongoDB, DynamoDB)</span>
+                      <span class="skill-label__tag">Programmiersprachen &amp; Frameworks</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr class="heatmap__category-row">
+                  <td colspan="5">Technik und Qualität</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Testautomatisierung (Unit-, Integrations-, End-to-End-Tests)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Clean Code (Lesbarkeit, Wartbarkeit, Standards)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Qualitätssicherung (Code-Reviews, statische Analysen)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Anforderungsmanagement (User Stories, Akzeptanzkriterien)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Architekturgrundlagen (Design Patterns, Modularisierung)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Secure Coding (OWASP Top 10, Umgang mit Secrets)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Versionskontrolle (Git-Workflows, Branch-Strategien)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">API-Design (REST, GraphQL)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Dokumentation (z. B. mit OpenAPI/Swagger)</span>
+                      <span class="skill-label__tag">Technik &amp; Qualität</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr class="heatmap__category-row">
+                  <td colspan="5">DevOps und Infrastruktur</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Continuous Integration / Continuous Delivery (CI/CD-Pipelines)</span>
+                      <span class="skill-label__tag">DevOps &amp; Infrastruktur</span>
+                    </div>
+                  </td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Containerisierung (Docker, Kubernetes)</span>
+                      <span class="skill-label__tag">DevOps &amp; Infrastruktur</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Infrastruktur als Code (Terraform, Ansible, Pulumi)</span>
+                      <span class="skill-label__tag">DevOps &amp; Infrastruktur</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Monitoring und Observability (Logs, Metrics, Tracing, Prometheus, Grafana)</span>
+                      <span class="skill-label__tag">DevOps &amp; Infrastruktur</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Cloud-Plattformen (AWS, Azure, GCP)</span>
+                      <span class="skill-label__tag">DevOps &amp; Infrastruktur</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Konfigurationsmanagement (Helm, Kustomize)</span>
+                      <span class="skill-label__tag">DevOps &amp; Infrastruktur</span>
+                    </div>
+                  </td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Security im Betrieb (Vulnerability Management, Secrets Management)</span>
+                      <span class="skill-label__tag">DevOps &amp; Infrastruktur</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr class="heatmap__category-row">
+                  <td colspan="5">Agile Praxis</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Backlog-Pflege und Refinement</span>
+                      <span class="skill-label__tag">Agile Praxis</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Aufwandsschätzung und Forecasting</span>
+                      <span class="skill-label__tag">Agile Praxis</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Moderation von Meetings</span>
+                      <span class="skill-label__tag">Agile Praxis</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Definition of Ready / Definition of Done</span>
+                      <span class="skill-label__tag">Agile Praxis</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Iteratives Arbeiten und Feedbackzyklen</span>
+                      <span class="skill-label__tag">Agile Praxis</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Continuous Improvement (Retrospektiven umsetzen)</span>
+                      <span class="skill-label__tag">Agile Praxis</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr class="heatmap__category-row">
+                  <td colspan="5">Zusammenarbeit</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Code-Reviews durchführen und konstruktives Feedback geben</span>
+                      <span class="skill-label__tag">Zusammenarbeit</span>
+                    </div>
+                  </td>
+                  <td data-stars="5">5 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Pair Programming und Mob Programming</span>
+                      <span class="skill-label__tag">Zusammenarbeit</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Dokumentation und Wissensweitergabe</span>
+                      <span class="skill-label__tag">Zusammenarbeit</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Kommunikation im Team und mit Stakeholdern</span>
+                      <span class="skill-label__tag">Zusammenarbeit</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Konfliktlösung und Moderation</span>
+                      <span class="skill-label__tag">Zusammenarbeit</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Mentoring und Coaching von Teammitgliedern</span>
+                      <span class="skill-label__tag">Zusammenarbeit</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr class="heatmap__category-row">
+                  <td colspan="5">Spezialisierungen</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Einsatz von KI-Tools in der Softwareentwicklung (z. B. Copilot, LLMs)</span>
+                      <span class="skill-label__tag">Spezialisierungen</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Datenschutz und Compliance (DSGVO, Lizenzmanagement)</span>
+                      <span class="skill-label__tag">Spezialisierungen</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Domain-Driven Design</span>
+                      <span class="skill-label__tag">Spezialisierungen</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Sicherheitstests (SAST, DAST, Penetration Testing)</span>
+                      <span class="skill-label__tag">Spezialisierungen</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Performance-Optimierung und Skalierbarkeit</span>
+                      <span class="skill-label__tag">Spezialisierungen</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Mobile App Entwicklung (iOS, Android, Flutter, React Native)</span>
+                      <span class="skill-label__tag">Spezialisierungen</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">UI/UX-Design-Grundlagen</span>
+                      <span class="skill-label__tag">Spezialisierungen</span>
+                    </div>
+                  </td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="skill-label">
+                      <span class="skill-label__title">Datenanalyse und Machine Learning (z. B. Pandas, TensorFlow, PyTorch)</span>
+                      <span class="skill-label__tag">Spezialisierungen</span>
+                    </div>
+                  </td>
+                  <td data-stars="4">4 ★</td>
+                  <td data-stars="2">2 ★</td>
+                  <td data-stars="3">3 ★</td>
+                  <td data-stars="2">2 ★</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="panel-grid panel-grid--responsive">
+          <article class="panel">
+            <header class="panel__header">
+              <h3>Skill-Gap Analyse</h3>
+              <button class="button button--ghost button--small">Details</button>
+            </header>
+            <ul class="gap-list">
+              <li>
+                <div>
+                  <h4>Secure Coding (OWASP Top 10, Umgang mit Secrets)</h4>
+                  <p>Team-Ø: 2.5 Sterne · Ziellevel: 4 Sterne</p>
+                </div>
+                <span class="badge badge--warning">Trainingsbedarf</span>
+              </li>
+              <li>
+                <div>
+                  <h4>Einsatz von KI-Tools in der Softwareentwicklung (z. B. Copilot, LLMs)</h4>
+                  <p>Team-Ø: 1.5 Sterne · Ziellevel: 3 Sterne</p>
+                </div>
+                <span class="badge badge--warning">Neues Thema</span>
+              </li>
+              <li>
+                <div>
+                  <h4>Testautomatisierung (Unit-, Integrations-, End-to-End-Tests)</h4>
+                  <p>Team-Ø: 2.8 Sterne · Ziellevel: 3 Sterne</p>
+                </div>
+                <span class="badge badge--ok">On Track</span>
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel">
+            <header class="panel__header">
+              <h3>Upcoming Maßnahmen</h3>
+              <button class="button button--primary button--small">Neue Maßnahme</button>
+            </header>
+            <div class="timeline">
+              <div class="timeline__item">
+                <span class="timeline__dot"></span>
+                <div>
+                  <strong>Secure Coding Grundkurs</strong>
+                  <p>KW 42 · 8 Std · Verantwortlich: Sarah</p>
+                </div>
+                <span class="badge badge--in-progress">geplant</span>
+              </div>
+              <div class="timeline__item">
+                <span class="timeline__dot"></span>
+                <div>
+                  <strong>CI/CD Blueprints Sprint</strong>
+                  <p>KW 45 · Provider: DevOps Academy</p>
+                </div>
+                <span class="badge badge--ok">bestätigt</span>
+              </div>
+              <div class="timeline__item">
+                <span class="timeline__dot"></span>
+                <div>
+                  <strong>KI-Tooling Playground</strong>
+                  <p>KW 48 · Fokus: Prompt Patterns &amp; Guardrails</p>
+                </div>
+                <span class="badge badge--draft">Idee</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

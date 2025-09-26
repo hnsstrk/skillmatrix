@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agile Skill Matrix – Aufgaben-Check</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="assignment-check">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__branding">
+        <div class="sidebar__logo">ASM</div>
+        <div class="sidebar__branding-text">
+          <h1>Agile Skill Matrix</h1>
+          <p>Team-Kompetenzen sichtbar machen</p>
+        </div>
+        <button class="sidebar__toggle" data-sidebar-toggle aria-label="Navigation minimieren" aria-expanded="true">
+          <span class="sidebar__toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      <nav class="sidebar__nav">
+        <a class="nav-link" data-page="team-overview" href="index.html">
+          <span class="nav-link__icon" aria-hidden="true">📊</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Team-Heatmap</span>
+            <small>Kompetenzabdeckung &amp; Gaps</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
+          <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Entwicklerprofile</span>
+            <small>Ratings, Evidenzen &amp; Maßnahmen</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
+          <span class="nav-link__icon" aria-hidden="true">📚</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Kompetenzkatalog</span>
+            <small>Definitionen &amp; Lehrgänge</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="training-planner" href="training-planner.html">
+          <span class="nav-link__icon" aria-hidden="true">🗂️</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Lehrgangsplanung</span>
+            <small>Skill-Gaps schließen</small>
+          </span>
+        </a>
+        <a class="nav-link" data-page="assignment-check" href="assignment-check.html">
+          <span class="nav-link__icon" aria-hidden="true">✅</span>
+          <span class="nav-link__text">
+            <span class="nav-link__title">Aufgaben-Check</span>
+            <small>Einsatzfähigkeit prüfen</small>
+          </span>
+        </a>
+      </nav>
+      <section class="sidebar__info">
+        <h2>Nächste Schritte</h2>
+        <ul>
+          <li>Self-Service Bewertung aktivieren</li>
+          <li>CSV-Export vorbereiten</li>
+          <li>Stakeholder-Review planen</li>
+        </ul>
+      </section>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span class="badge badge--primary">MVP Mockup</span>
+          <h2>Aufgaben-Check</h2>
+        </div>
+        <div class="topbar__actions">
+          <button class="button button--ghost">Profil importieren</button>
+          <button class="button button--primary">Ergebnis teilen</button>
+        </div>
+      </header>
+
+      <section>
+        <article class="panel">
+          <header class="panel__header">
+            <h3>Aufgaben-Check</h3>
+            <div class="panel__filters">
+              <select>
+                <option>Team Alpha</option>
+                <option>Team Beta</option>
+              </select>
+              <button class="button button--ghost button--small">Profil importieren</button>
+            </div>
+          </header>
+          <div class="assignment">
+            <form class="assignment__form">
+              <label>
+                Aufgabenprofil
+                <input type="text" placeholder="z. B. Secure Payment API" />
+              </label>
+              <label>
+                Benötigte Kompetenz
+                <select>
+                  <option>Secure Coding (OWASP Top 10, Umgang mit Secrets)</option>
+                  <option>Continuous Integration / Continuous Delivery (CI/CD-Pipelines)</option>
+                  <option>Einsatz von KI-Tools in der Softwareentwicklung (z. B. Copilot, LLMs)</option>
+                </select>
+              </label>
+              <label>
+                Mindestlevel (Sterne)
+                <input type="number" min="0" max="5" value="4" />
+              </label>
+              <button type="button" class="button button--primary">Skill-Abdeckung prüfen</button>
+            </form>
+            <div class="assignment__result">
+              <h4>Ergebnis</h4>
+              <p>
+                Team Alpha erreicht aktuell <strong>3.2 Sterne</strong> in Secure Coding (OWASP Top 10, Umgang mit Secrets). Es
+                fehlen <strong>0.8 Sterne</strong> zum geforderten Level.
+              </p>
+              <ul>
+                <li>Empfohlene Maßnahme: Secure Coding Grundkurs (KW 42)</li>
+                <li>Quick Win: Pair Review Sessions mit Lea</li>
+                <li>Follow-Up: Security Champion nominieren</li>
+              </ul>
+              <button class="button button--ghost">Als Maßnahme speichern</button>
+            </div>
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
