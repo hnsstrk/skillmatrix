@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agile Skill Matrix – Aufgaben-Check</title>
+  <title>Agile Skill Matrix – Team-/Projektabgleich</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body data-page="assignment-check">
+<body data-page="team-project-alignment">
   <div class="app-shell">
     <aside class="sidebar">
       <div class="sidebar__branding">
@@ -24,7 +24,6 @@
           <span class="sidebar__toggle-icon" aria-hidden="true"></span>
         </button>
       </div>
-      
 
       <nav class="sidebar__nav">
         <div class="nav-section" data-section="heatmap">
@@ -127,142 +126,147 @@
         </a>
       </footer>
 
-
     </aside>
 
     <main class="content">
       <header class="topbar">
         <div class="breadcrumbs">
           <span class="badge badge--primary">MVP Mockup</span>
-          <h2>Aufgaben-Check</h2>
+          <h2>Team-/Projektabgleich</h2>
         </div>
         <div class="topbar__actions">
-          <button class="button button--ghost">Profil importieren</button>
-          <a class="button button--primary" href="assignment-new.html">Neue Anforderung</a>
+          <a class="button button--ghost" href="projects.html">Zurück zum Portfolio</a>
+          <a class="button button--primary" href="training-planner.html">Trainings planen</a>
         </div>
       </header>
 
-      <section class="assignment-overview">
+      <section class="panel">
+        <header class="panel__header">
+          <div>
+            <h3>Match-Check Q2/Q3 2026</h3>
+            <p class="panel__subtitle">Gegenüberstellung der autonomen Teams und der zwei kommenden Initiativen in sechs bis acht Monaten.</p>
+          </div>
+          <span class="badge badge--primary">aktualisiert KW 40</span>
+        </header>
+        <div class="project-matrix">
+          <table>
+            <thead>
+              <tr>
+                <th>Projekt</th>
+                <th>Team Aurora</th>
+                <th>Team Borealis</th>
+                <th>Team Cosmos</th>
+                <th>Trainings / Maßnahmen</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <strong>Orion Trust Platform</strong>
+                  <span class="table-hint">Zero-Trust Partnerzugang · Start April 2026</span>
+                </td>
+                <td>
+                  <span class="table-status table-status--ok">Ready</span>
+                  <small>Journey Design (Lea, Helena) 4★</small>
+                </td>
+                <td>
+                  <span class="table-status table-status--ok">Lead-Team</span>
+                  <small>Security &amp; Compliance (Oliver, Daniel) 5★</small>
+                </td>
+                <td>
+                  <span class="table-status">Nicht erforderlich</span>
+                  <small>Nur sporadische SRE-Unterstützung</small>
+                </td>
+                <td>
+                  <strong>RegTech Orchestrierung</strong>
+                  <span>Katja &amp; Oliver – 3-tägiger Workshop im Januar 2026</span>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <strong>Nebula Insight Portal</strong>
+                  <span class="table-hint">Streaming Analytics &amp; Mobile · Start Mai 2026</span>
+                </td>
+                <td>
+                  <span class="table-status table-status--warn">Training geplant</span>
+                  <small>Prompt UX (Lea) – Februar 2026</small>
+                </td>
+                <td>
+                  <span class="table-status table-status--warn">Support \u2265 3★</span>
+                  <small>DataOps Playbook Refresh im Januar 2026</small>
+                </td>
+                <td>
+                  <span class="table-status table-status--ok">Lead-Team</span>
+                  <small>Streaming &amp; Mobile (Maja, Sophia) 5★</small>
+                </td>
+                <td>
+                  <strong>Trusted Prompt Journeys</strong>
+                  <span>Lina, Sophia, Lea – Design Sprint &amp; Coaching im Februar 2026</span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel-grid panel-grid--responsive">
         <article class="panel">
-          <header class="panel__header panel__header--split">
+          <header class="panel__header">
             <div>
-              <h3>Aufgaben-Check Übersicht</h3>
-              <p class="panel__subtitle">Abgleich Teamfähigkeit vs. Projektanforderung</p>
-            </div>
-            <div class="panel__controls">
-              <label class="field-group">
-                <span>Team</span>
-                <select>
-                  <option>Team Aurora</option>
-                  <option>Team Borealis</option>
-                  <option>Team Cosmos</option>
-                </select>
-              </label>
-              <label class="field-group">
-                <span>Status</span>
-                <select>
-                  <option>Alle</option>
-                  <option>Gap gefunden</option>
-                  <option>Erfüllt</option>
-                </select>
-              </label>
-              <a class="button button--primary button--small" href="assignment-new.html">Neue Anforderung</a>
+              <h3>Maßnahmenübersicht</h3>
+              <p class="panel__subtitle">Lehrgänge und Shadowing-Slots abgestimmt auf die Projektvorbereitung.</p>
             </div>
           </header>
-          <div class="assignment-list">
-            <article class="assignment-card">
-              <header>
-                <h4>Secure Payment API</h4>
-                <span class="badge badge--warning">Gap 0.8★</span>
-              </header>
-              <p><strong>Skill:</strong> Secure Coding >= 4★ - Team Aurora erreicht 3.2★.</p>
-              <p><strong>Hinweis:</strong> Gap wird durch Secure Coding Grundkurs (KW 42) geschlossen.</p>
-              <footer>
-                <span>Owner: Lea - Letzter Check: 09.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Erneut prüfen</a>
-              </footer>
-            </article>
-            <article class="assignment-card">
-              <header>
-                <h4>Observability Gateway</h4>
-                <span class="badge badge--ok">Erfüllt</span>
-              </header>
-              <p><strong>Skill:</strong> Monitoring >= 3★ - Team Borealis erreicht 3.4★.</p>
-              <p><strong>Hinweis:</strong> Deployment kann wie geplant in KW 43 starten.</p>
-              <footer>
-                <span>Owner: Marco - Letzter Check: 07.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Check duplizieren</a>
-              </footer>
-            </article>
-            <article class="assignment-card">
-              <header>
-                <h4>ChatOps Automatisierung</h4>
-                <span class="badge badge--primary">In Prüfung</span>
-              </header>
-              <p><strong>Skill:</strong> Prompt Engineering >= 3★ - Team Cosmos erreicht 2.6★.</p>
-              <p><strong>Hinweis:</strong> Interim-Lösung via Pairing mit AI Chapter.</p>
-              <footer>
-                <span>Owner: Sarah - Letzter Check: 05.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Details bearbeiten</a>
-              </footer>
-            </article>
-          </div>
+          <ul class="status-list">
+            <li>
+              <div class="status-list__header">
+                <strong>RegTech Orchestrierung</strong>
+                <span class="badge badge--warning">Januar 2026</span>
+              </div>
+              <p>3-tägiger Workshop mit Legal &amp; Compliance. Teilnehmer:innen: Katja Meier, Oliver Sturm.</p>
+              <a class="status-list__link" href="training-planner.html#regtech">Details ansehen</a>
+            </li>
+            <li>
+              <div class="status-list__header">
+                <strong>DataOps Playbook Refresh</strong>
+                <span class="badge badge--primary">Januar 2026</span>
+              </div>
+              <p>Hands-on Training für Streaming-Pipelines. Teilnehmer:innen: Maja Riedl (Coach), Felix Hahn.</p>
+              <a class="status-list__link" href="training-planner.html#streaming">Session planen</a>
+            </li>
+            <li>
+              <div class="status-list__header">
+                <strong>Trusted Prompt Journeys</strong>
+                <span class="badge badge--primary">Februar 2026</span>
+              </div>
+              <p>Design Sprint zu verantwortungsvollen Prompt-Flows. Teilnehmer:innen: Lina Vogt, Sophia Hartmann, Lea Fischer.</p>
+              <a class="status-list__link" href="training-planner.html#prompt">Material vorbereiten</a>
+            </li>
+          </ul>
         </article>
 
-        <div class="panel-grid panel-grid--responsive">
-          <article class="panel">
-            <header class="panel__header">
-              <div>
-                <h3>Zuletzt geprüft</h3>
-                <p class="panel__subtitle">Aktivitäten der vergangenen Woche</p>
-              </div>
-              <button class="button button--ghost button--small">Export</button>
-            </header>
-            <div class="timeline">
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>09.10. - Secure Payment API</strong>
-                <p>Gap festgestellt: 0.8★ - Maßnahme Secure Coding Grundkurs eingesteuert.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>07.10. - Observability Gateway</strong>
-                <p>Check bestanden - Monitoring Dashboard freigegeben.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>05.10. - ChatOps Automatisierung</strong>
-                <p>Gap 0.4★ - Unterstützung durch AI Chapter angefragt.</p>
-              </div>
+        <article class="panel">
+          <header class="panel__header">
+            <div>
+              <h3>Team Stärken &amp; Gaps</h3>
+              <p class="panel__subtitle">Zusammenfassung der autonomen Fähigkeiten im Kontext der beiden Projekte.</p>
             </div>
-          </article>
-
-          <article class="panel">
-            <header class="panel__header">
-              <div>
-                <h3>Detailansicht - Secure Payment API</h3>
-                <p class="panel__subtitle">Abstimmung mit Projekt KIA-23</p>
-              </div>
-              <a class="button button--ghost button--small" href="assignment-new.html">Neue Prüfung</a>
-            </header>
-            <div class="assignment__result">
-              <h4>Skill-Abdeckung</h4>
-              <p>
-                Team Aurora erreicht aktuell <strong>3.2 Sterne</strong> in Secure Coding (OWASP Top 10, Umgang mit Secrets). Es
-                fehlen <strong>0.8 Sterne</strong> zum geforderten Level.
-              </p>
-              <ul>
-                <li>Empfohlene Maßnahme: Secure Coding Grundkurs (KW 42)</li>
-                <li>Quick Win: Pair Review Sessions mit Lea</li>
-                <li>Follow-Up: Security Champion nominieren</li>
-              </ul>
-              <div class="assignment__result-actions">
-                <a class="button button--ghost" href="training-planner.html">In Planung übernehmen</a>
-                <a class="button button--primary" href="assignment-new.html">Nächsten Check anlegen</a>
-              </div>
+          </header>
+          <div class="team-strengths">
+            <div>
+              <strong>Team Aurora</strong>
+              <span>Stark in Journey Design &amp; Conversation UX. Offene Lernfelder: Prompt Governance.</span>
             </div>
-          </article>
-        </div>
+            <div>
+              <strong>Team Borealis</strong>
+              <span>Führt Zero-Trust &amp; Compliance an. Fokus: Automatisierungslayer für RegTech.</span>
+            </div>
+            <div>
+              <strong>Team Cosmos</strong>
+              <span>Bereit für Streaming &amp; Mobile. Ergänzt durch Borealis DataOps Playbook.</span>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
   </div>

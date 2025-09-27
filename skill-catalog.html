@@ -13,60 +13,121 @@
   <div class="app-shell">
     <aside class="sidebar">
       <div class="sidebar__branding">
-        <div class="sidebar__logo">ASM</div>
-        <div class="sidebar__branding-text">
-          <h1>Agile Skill Matrix</h1>
-          <p>Team-Kompetenzen sichtbar machen</p>
-        </div>
+        <a class="sidebar__home" href="index.html">
+          <div class="sidebar__logo">ASM</div>
+          <div class="sidebar__branding-text">
+            <h1>Agile Skill Matrix</h1>
+            <p>Team-Kompetenzen sichtbar machen</p>
+          </div>
+        </a>
         <button class="sidebar__toggle" data-sidebar-toggle aria-label="Navigation minimieren" aria-expanded="true">
           <span class="sidebar__toggle-icon" aria-hidden="true"></span>
         </button>
       </div>
+      
+
       <nav class="sidebar__nav">
-        <a class="nav-link" data-page="team-overview" href="index.html">
-          <span class="nav-link__icon" aria-hidden="true">📊</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Team-Heatmap</span>
-            <small>Kompetenzabdeckung &amp; Gaps</small>
-          </span>
-        </a>
-        <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
-          <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Entwicklerprofile</span>
-            <small>Ratings, Evidenzen &amp; Maßnahmen</small>
-          </span>
-        </a>
-        <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
-          <span class="nav-link__icon" aria-hidden="true">📚</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Kompetenzkatalog</span>
-            <small>Definitionen &amp; Lehrgänge</small>
-          </span>
-        </a>
-        <a class="nav-link" data-page="training-planner" href="training-planner.html">
-          <span class="nav-link__icon" aria-hidden="true">🗂️</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Lehrgangsplanung</span>
-            <small>Skill-Gaps schließen</small>
-          </span>
-        </a>
-        <a class="nav-link" data-page="assignment-check" href="assignment-check.html">
-          <span class="nav-link__icon" aria-hidden="true">✅</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Aufgaben-Check</span>
-            <small>Einsatzfähigkeit prüfen</small>
-          </span>
-        </a>
+        <div class="nav-section" data-section="heatmap">
+          <a class="nav-link" data-page="heatmap" href="heatmap.html">
+            <span class="nav-link__icon" aria-hidden="true">📊</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Heatmap</span>
+              <small>Kompetenzabdeckung</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Heatmap-Ansichten">
+            <a class="nav-sublink" data-page="heatmap-team" href="heatmap-team.html" title="Team-Heatmap" aria-label="Team-Heatmap">
+              <span class="nav-sublink__icon" aria-hidden="true">👥</span>
+              <span class="visually-hidden">Team-Heatmap</span>
+            </a>
+            <a class="nav-sublink" data-page="heatmap-developer" href="heatmap-developer.html" title="Entwickler-Heatmap" aria-label="Entwickler-Heatmap">
+              <span class="nav-sublink__icon" aria-hidden="true">🧑‍💻</span>
+              <span class="visually-hidden">Entwickler-Heatmap</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="projects">
+          <a class="nav-link" data-page="projects" href="projects.html">
+            <span class="nav-link__icon" aria-hidden="true">🧩</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Projekte</span>
+              <small>Portfolio &amp; Bedarf</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Projekte Aktionen">
+            <a class="nav-sublink" data-page="project-new" href="project-new.html" title="Projekt anlegen" aria-label="Projekt anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Projekt anlegen</span>
+            </a>
+            <a class="nav-sublink" data-page="project-edit" href="project-edit.html" title="Projekt bearbeiten" aria-label="Projekt bearbeiten">
+              <span class="nav-sublink__icon" aria-hidden="true">🛠️</span>
+              <span class="visually-hidden">Projekt bearbeiten</span>
+            </a>
+            <a class="nav-sublink" data-page="team-project-alignment" href="team-project-alignment.html" title="Team-Projekt-Abgleich" aria-label="Team-Projekt-Abgleich">
+              <span class="nav-sublink__icon" aria-hidden="true">📈</span>
+              <span class="visually-hidden">Team-Projekt-Abgleich</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="developer-profiles">
+          <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
+            <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Entwicklerprofile</span>
+              <small>Ratings &amp; Evidenzen</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Profilaktionen">
+            <a class="nav-sublink" data-page="developer-profile-new" href="developer-profile-new.html" title="Profil anlegen" aria-label="Profil anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Profil anlegen</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="skill-catalog">
+          <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
+            <span class="nav-link__icon" aria-hidden="true">📚</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Kompetenzkatalog</span>
+              <small>Definitionen &amp; Pfade</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Katalogaktionen">
+            <a class="nav-sublink" data-page="skill-catalog-new" href="skill-catalog-new.html" title="Kompetenz anlegen" aria-label="Kompetenz anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Kompetenz anlegen</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="training-planner">
+          <a class="nav-link" data-page="training-planner" href="training-planner.html">
+            <span class="nav-link__icon" aria-hidden="true">🗂️</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Lehrgangsplanung</span>
+              <small>Skill-Gaps schließen</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Lehrgangsaktionen">
+            <a class="nav-sublink" data-page="training-planner-new" href="training-planner-new.html" title="Lehrgang anlegen" aria-label="Lehrgang anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Lehrgang anlegen</span>
+            </a>
+          </div>
+        </div>
       </nav>
-      <section class="sidebar__info">
-        <h2>Nächste Schritte</h2>
-        <ul>
-          <li>Self-Service Bewertung aktivieren</li>
-          <li>CSV-Export vorbereiten</li>
-          <li>Stakeholder-Review planen</li>
-        </ul>
-      </section>
+      <footer class="sidebar__footer">
+        <button class="sidebar__theme-toggle" type="button" data-theme-toggle data-theme-mode="light" aria-label="Hell-/Dunkelmodus umschalten">
+          <span class="sidebar__theme-icon sidebar__theme-icon--light" aria-hidden="true">🌞</span>
+          <span class="sidebar__theme-icon sidebar__theme-icon--dark" aria-hidden="true">🌙</span>
+          <span class="sidebar__footer-label">Modus</span>
+        </button>
+        <a class="sidebar__footer-link" data-page="settings" href="settings.html" title="Einstellungen öffnen">
+          <span class="sidebar__footer-icon" aria-hidden="true">⚙️</span>
+          <span class="sidebar__footer-label">Einstellungen</span>
+        </a>
+      </footer>
+
+
     </aside>
 
     <main class="content">

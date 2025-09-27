@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agile Skill Matrix – Aufgaben-Check</title>
+  <title>Agile Skill Matrix – Entwicklerprofil anlegen</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body data-page="assignment-check">
+<body data-page="developer-profile-new">
   <div class="app-shell">
     <aside class="sidebar">
       <div class="sidebar__branding">
@@ -134,135 +134,78 @@
       <header class="topbar">
         <div class="breadcrumbs">
           <span class="badge badge--primary">MVP Mockup</span>
-          <h2>Aufgaben-Check</h2>
+          <h2>Entwicklerprofil anlegen</h2>
         </div>
         <div class="topbar__actions">
-          <button class="button button--ghost">Profil importieren</button>
-          <a class="button button--primary" href="assignment-new.html">Neue Anforderung</a>
+          <a class="button button--ghost" href="developer-profiles.html">Zurück zur Übersicht</a>
+          <button class="button button--primary">Profil speichern</button>
         </div>
       </header>
 
-      <section class="assignment-overview">
+      <section class="panel-grid panel-grid--two">
         <article class="panel">
-          <header class="panel__header panel__header--split">
-            <div>
-              <h3>Aufgaben-Check Übersicht</h3>
-              <p class="panel__subtitle">Abgleich Teamfähigkeit vs. Projektanforderung</p>
-            </div>
-            <div class="panel__controls">
-              <label class="field-group">
-                <span>Team</span>
-                <select>
-                  <option>Team Aurora</option>
-                  <option>Team Borealis</option>
-                  <option>Team Cosmos</option>
-                </select>
-              </label>
-              <label class="field-group">
-                <span>Status</span>
-                <select>
-                  <option>Alle</option>
-                  <option>Gap gefunden</option>
-                  <option>Erfüllt</option>
-                </select>
-              </label>
-              <a class="button button--primary button--small" href="assignment-new.html">Neue Anforderung</a>
-            </div>
+          <header class="panel__header">
+            <h3>Person &amp; Kontext</h3>
           </header>
-          <div class="assignment-list">
-            <article class="assignment-card">
-              <header>
-                <h4>Secure Payment API</h4>
-                <span class="badge badge--warning">Gap 0.8★</span>
-              </header>
-              <p><strong>Skill:</strong> Secure Coding >= 4★ - Team Aurora erreicht 3.2★.</p>
-              <p><strong>Hinweis:</strong> Gap wird durch Secure Coding Grundkurs (KW 42) geschlossen.</p>
-              <footer>
-                <span>Owner: Lea - Letzter Check: 09.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Erneut prüfen</a>
-              </footer>
-            </article>
-            <article class="assignment-card">
-              <header>
-                <h4>Observability Gateway</h4>
-                <span class="badge badge--ok">Erfüllt</span>
-              </header>
-              <p><strong>Skill:</strong> Monitoring >= 3★ - Team Borealis erreicht 3.4★.</p>
-              <p><strong>Hinweis:</strong> Deployment kann wie geplant in KW 43 starten.</p>
-              <footer>
-                <span>Owner: Marco - Letzter Check: 07.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Check duplizieren</a>
-              </footer>
-            </article>
-            <article class="assignment-card">
-              <header>
-                <h4>ChatOps Automatisierung</h4>
-                <span class="badge badge--primary">In Prüfung</span>
-              </header>
-              <p><strong>Skill:</strong> Prompt Engineering >= 3★ - Team Cosmos erreicht 2.6★.</p>
-              <p><strong>Hinweis:</strong> Interim-Lösung via Pairing mit AI Chapter.</p>
-              <footer>
-                <span>Owner: Sarah - Letzter Check: 05.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Details bearbeiten</a>
-              </footer>
-            </article>
-          </div>
+          <form class="project-form">
+            <label>
+              <span>Name</span>
+              <input type="text" placeholder="z. B. Sarah König" />
+            </label>
+            <label>
+              <span>Rolle</span>
+              <input type="text" placeholder="z. B. Lead Developer" />
+            </label>
+            <label>
+              <span>Teamzuordnung</span>
+              <select>
+                <option>Team Aurora</option>
+                <option>Team Borealis</option>
+                <option>Team Cosmos</option>
+              </select>
+            </label>
+            <label>
+              <span>Profil-Zielsetzung</span>
+              <textarea rows="4" placeholder="Welche Verantwortlichkeiten oder Skills sollen sichtbar werden?"></textarea>
+            </label>
+            <div class="project-form__actions">
+              <button class="button button--ghost">Zwischenspeichern</button>
+              <button class="button button--primary">Weiter zu Skill-Level</button>
+            </div>
+          </form>
         </article>
 
-        <div class="panel-grid panel-grid--responsive">
-          <article class="panel">
-            <header class="panel__header">
-              <div>
-                <h3>Zuletzt geprüft</h3>
-                <p class="panel__subtitle">Aktivitäten der vergangenen Woche</p>
-              </div>
-              <button class="button button--ghost button--small">Export</button>
-            </header>
-            <div class="timeline">
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>09.10. - Secure Payment API</strong>
-                <p>Gap festgestellt: 0.8★ - Maßnahme Secure Coding Grundkurs eingesteuert.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>07.10. - Observability Gateway</strong>
-                <p>Check bestanden - Monitoring Dashboard freigegeben.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>05.10. - ChatOps Automatisierung</strong>
-                <p>Gap 0.4★ - Unterstützung durch AI Chapter angefragt.</p>
-              </div>
+        <article class="panel">
+          <header class="panel__header">
+            <h3>Skill-Bewertung vorbereiten</h3>
+          </header>
+          <form class="project-form">
+            <label>
+              <span>Kernkompetenzen</span>
+              <input type="text" placeholder="z. B. Secure Coding, CI/CD" />
+            </label>
+            <label>
+              <span>Niveau-Vorgabe</span>
+              <select>
+                <option>Selbsteinschätzung mit Review</option>
+                <option>Lead bewertet</option>
+                <option>Komitee bewertet</option>
+              </select>
+            </label>
+            <label>
+              <span>Erwartete Evidenzen</span>
+              <textarea rows="4" placeholder="Welche Nachweise braucht das Team?"></textarea>
+            </label>
+            <label>
+              <span>Erste Maßnahme</span>
+              <input type="text" placeholder="z. B. Mentoring, Shadowing" />
+            </label>
+            <div class="project-form__actions">
+              <button class="button button--ghost">Checkliste exportieren</button>
+              <button class="button button--primary">Profil anlegen</button>
             </div>
-          </article>
-
-          <article class="panel">
-            <header class="panel__header">
-              <div>
-                <h3>Detailansicht - Secure Payment API</h3>
-                <p class="panel__subtitle">Abstimmung mit Projekt KIA-23</p>
-              </div>
-              <a class="button button--ghost button--small" href="assignment-new.html">Neue Prüfung</a>
-            </header>
-            <div class="assignment__result">
-              <h4>Skill-Abdeckung</h4>
-              <p>
-                Team Aurora erreicht aktuell <strong>3.2 Sterne</strong> in Secure Coding (OWASP Top 10, Umgang mit Secrets). Es
-                fehlen <strong>0.8 Sterne</strong> zum geforderten Level.
-              </p>
-              <ul>
-                <li>Empfohlene Maßnahme: Secure Coding Grundkurs (KW 42)</li>
-                <li>Quick Win: Pair Review Sessions mit Lea</li>
-                <li>Follow-Up: Security Champion nominieren</li>
-              </ul>
-              <div class="assignment__result-actions">
-                <a class="button button--ghost" href="training-planner.html">In Planung übernehmen</a>
-                <a class="button button--primary" href="assignment-new.html">Nächsten Check anlegen</a>
-              </div>
-            </div>
-          </article>
-        </div>
+          </form>
+        </article>
       </section>
     </main>
   </div>

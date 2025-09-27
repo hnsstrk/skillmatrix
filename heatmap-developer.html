@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Agile Skill Matrix – Aufgaben-Check</title>
+  <title>Agile Skill Matrix – Entwickler-Heatmap</title>
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body data-page="assignment-check">
+<body data-page="heatmap-developer">
   <div class="app-shell">
     <aside class="sidebar">
       <div class="sidebar__branding">
@@ -24,7 +24,6 @@
           <span class="sidebar__toggle-icon" aria-hidden="true"></span>
         </button>
       </div>
-      
 
       <nav class="sidebar__nav">
         <div class="nav-section" data-section="heatmap">
@@ -127,142 +126,204 @@
         </a>
       </footer>
 
-
     </aside>
 
     <main class="content">
       <header class="topbar">
         <div class="breadcrumbs">
           <span class="badge badge--primary">MVP Mockup</span>
-          <h2>Aufgaben-Check</h2>
+          <h2>Entwickler-Heatmap</h2>
         </div>
         <div class="topbar__actions">
-          <button class="button button--ghost">Profil importieren</button>
-          <a class="button button--primary" href="assignment-new.html">Neue Anforderung</a>
+          <a class="button button--ghost" href="heatmap.html">Zur Übersicht</a>
+          <a class="button button--primary" href="heatmap-team.html">Team-Heatmap öffnen</a>
         </div>
       </header>
 
-      <section class="assignment-overview">
+      <section class="panel">
+        <header class="panel__header panel__header--split">
+          <div>
+            <h3>Auswahl &amp; Filter</h3>
+            <p class="panel__subtitle">Abgleich individueller Skills mit Projektanforderungen</p>
+          </div>
+        </header>
+        <div class="panel__controls">
+          <label class="field-group">
+            <span>Kapitel</span>
+            <select>
+              <option>Engineering</option>
+              <option>UX &amp; Produkt</option>
+              <option>Data &amp; KI</option>
+            </select>
+          </label>
+          <label class="field-group">
+            <span>Skill-Fokus</span>
+            <select>
+              <option>DevSecOps</option>
+              <option>Terraform</option>
+              <option>Prompt Engineering</option>
+              <option>UX Research</option>
+            </select>
+          </label>
+          <label class="field-group">
+            <span>Ziel-Level</span>
+            <select>
+              <option>Level ≥ 3</option>
+              <option>Level ≥ 4</option>
+              <option>Level ≥ 5</option>
+            </select>
+          </label>
+          <label class="field-group">
+            <span>Projekt</span>
+            <select>
+              <option>Secure Pipeline Rollout</option>
+              <option>KIA-23</option>
+              <option>SkillRadar Dashboard</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <header class="panel__header">
+          <div>
+            <h3>Skill-Fit nach Personen</h3>
+            <p class="panel__subtitle">Vergleich aktueller Level vs. Soll-Anforderungen (Top 8 Profile)</p>
+          </div>
+          <button class="button button--ghost button--small">Als CSV exportieren</button>
+        </header>
+        <div class="heatmap">
+          <table>
+            <thead>
+              <tr>
+                <th>Profil</th>
+                <th>Hauptskill</th>
+                <th>Aktuelles Level</th>
+                <th>Gap</th>
+                <th>Letztes Update</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="heatmap__category-row">
+                <td>Sarah König</td>
+                <td>DevSecOps</td>
+                <td data-stars="4">4 ★</td>
+                <td>0,8</td>
+                <td>12.09.2025</td>
+              </tr>
+              <tr class="heatmap__category-row">
+                <td>Milan Ortiz</td>
+                <td>Terraform</td>
+                <td data-stars="3">3 ★</td>
+                <td>1,2</td>
+                <td>02.10.2025</td>
+              </tr>
+              <tr class="heatmap__category-row">
+                <td>Nina Berger</td>
+                <td>Prompt Engineering</td>
+                <td data-stars="2">2 ★</td>
+                <td>1,8</td>
+                <td>28.09.2025</td>
+              </tr>
+              <tr class="heatmap__category-row">
+                <td>Daniel Weber</td>
+                <td>Threat Modeling</td>
+                <td data-stars="4">4 ★</td>
+                <td>0,5</td>
+                <td>05.09.2025</td>
+              </tr>
+              <tr class="heatmap__category-row">
+                <td>Maja Riedl</td>
+                <td>Data Pipeline</td>
+                <td data-stars="3">3 ★</td>
+                <td>1,0</td>
+                <td>17.09.2025</td>
+              </tr>
+              <tr class="heatmap__category-row">
+                <td>Ben Falk</td>
+                <td>CI/CD Automation</td>
+                <td data-stars="2">2 ★</td>
+                <td>1,6</td>
+                <td>01.10.2025</td>
+              </tr>
+              <tr class="heatmap__category-row">
+                <td>Lina Vogt</td>
+                <td>UX Research</td>
+                <td data-stars="3">3 ★</td>
+                <td>0,9</td>
+                <td>22.09.2025</td>
+              </tr>
+              <tr class="heatmap__category-row">
+                <td>Jonas Brandt</td>
+                <td>Cloud Security</td>
+                <td data-stars="2">2 ★</td>
+                <td>1,5</td>
+                <td>14.09.2025</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel-grid panel-grid--two">
         <article class="panel">
-          <header class="panel__header panel__header--split">
+          <header class="panel__header">
             <div>
-              <h3>Aufgaben-Check Übersicht</h3>
-              <p class="panel__subtitle">Abgleich Teamfähigkeit vs. Projektanforderung</p>
-            </div>
-            <div class="panel__controls">
-              <label class="field-group">
-                <span>Team</span>
-                <select>
-                  <option>Team Aurora</option>
-                  <option>Team Borealis</option>
-                  <option>Team Cosmos</option>
-                </select>
-              </label>
-              <label class="field-group">
-                <span>Status</span>
-                <select>
-                  <option>Alle</option>
-                  <option>Gap gefunden</option>
-                  <option>Erfüllt</option>
-                </select>
-              </label>
-              <a class="button button--primary button--small" href="assignment-new.html">Neue Anforderung</a>
+              <h3>Trendindikatoren</h3>
+              <p class="panel__subtitle">Beobachtung der letzten 6 Wochen</p>
             </div>
           </header>
-          <div class="assignment-list">
-            <article class="assignment-card">
-              <header>
-                <h4>Secure Payment API</h4>
-                <span class="badge badge--warning">Gap 0.8★</span>
-              </header>
-              <p><strong>Skill:</strong> Secure Coding >= 4★ - Team Aurora erreicht 3.2★.</p>
-              <p><strong>Hinweis:</strong> Gap wird durch Secure Coding Grundkurs (KW 42) geschlossen.</p>
-              <footer>
-                <span>Owner: Lea - Letzter Check: 09.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Erneut prüfen</a>
-              </footer>
-            </article>
-            <article class="assignment-card">
-              <header>
-                <h4>Observability Gateway</h4>
-                <span class="badge badge--ok">Erfüllt</span>
-              </header>
-              <p><strong>Skill:</strong> Monitoring >= 3★ - Team Borealis erreicht 3.4★.</p>
-              <p><strong>Hinweis:</strong> Deployment kann wie geplant in KW 43 starten.</p>
-              <footer>
-                <span>Owner: Marco - Letzter Check: 07.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Check duplizieren</a>
-              </footer>
-            </article>
-            <article class="assignment-card">
-              <header>
-                <h4>ChatOps Automatisierung</h4>
-                <span class="badge badge--primary">In Prüfung</span>
-              </header>
-              <p><strong>Skill:</strong> Prompt Engineering >= 3★ - Team Cosmos erreicht 2.6★.</p>
-              <p><strong>Hinweis:</strong> Interim-Lösung via Pairing mit AI Chapter.</p>
-              <footer>
-                <span>Owner: Sarah - Letzter Check: 05.10.</span>
-                <a class="button button--ghost button--small" href="assignment-new.html">Details bearbeiten</a>
-              </footer>
-            </article>
-          </div>
+          <ul class="gap-list">
+            <li>
+              <div>
+                <strong>Self-Assessments abgeschlossen</strong>
+                <span>18 Profile · +35% vs. Vorperiode</span>
+              </div>
+              <span class="badge badge--success">positiv</span>
+            </li>
+            <li>
+              <div>
+                <strong>Mentor:innen verfügbar</strong>
+                <span>5 aktive Mentoren · Bedarf: 7</span>
+              </div>
+              <span class="badge badge--warning">Handlung</span>
+            </li>
+            <li>
+              <div>
+                <strong>Profil-Aktualität</strong>
+                <span>Ø 26 Tage seit letztem Update</span>
+              </div>
+              <span class="badge badge--primary">stabil</span>
+            </li>
+          </ul>
         </article>
 
-        <div class="panel-grid panel-grid--responsive">
-          <article class="panel">
-            <header class="panel__header">
-              <div>
-                <h3>Zuletzt geprüft</h3>
-                <p class="panel__subtitle">Aktivitäten der vergangenen Woche</p>
-              </div>
-              <button class="button button--ghost button--small">Export</button>
-            </header>
-            <div class="timeline">
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>09.10. - Secure Payment API</strong>
-                <p>Gap festgestellt: 0.8★ - Maßnahme Secure Coding Grundkurs eingesteuert.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>07.10. - Observability Gateway</strong>
-                <p>Check bestanden - Monitoring Dashboard freigegeben.</p>
-              </div>
-              <div class="timeline__item">
-                <span class="timeline__dot"></span>
-                <strong>05.10. - ChatOps Automatisierung</strong>
-                <p>Gap 0.4★ - Unterstützung durch AI Chapter angefragt.</p>
-              </div>
+        <article class="panel">
+          <header class="panel__header">
+            <div>
+              <h3>Mentoring &amp; Training</h3>
+              <p class="panel__subtitle">Zuordnung offener Skill-Gaps</p>
             </div>
-          </article>
-
-          <article class="panel">
-            <header class="panel__header">
-              <div>
-                <h3>Detailansicht - Secure Payment API</h3>
-                <p class="panel__subtitle">Abstimmung mit Projekt KIA-23</p>
-              </div>
-              <a class="button button--ghost button--small" href="assignment-new.html">Neue Prüfung</a>
-            </header>
-            <div class="assignment__result">
-              <h4>Skill-Abdeckung</h4>
-              <p>
-                Team Aurora erreicht aktuell <strong>3.2 Sterne</strong> in Secure Coding (OWASP Top 10, Umgang mit Secrets). Es
-                fehlen <strong>0.8 Sterne</strong> zum geforderten Level.
-              </p>
-              <ul>
-                <li>Empfohlene Maßnahme: Secure Coding Grundkurs (KW 42)</li>
-                <li>Quick Win: Pair Review Sessions mit Lea</li>
-                <li>Follow-Up: Security Champion nominieren</li>
-              </ul>
-              <div class="assignment__result-actions">
-                <a class="button button--ghost" href="training-planner.html">In Planung übernehmen</a>
-                <a class="button button--primary" href="assignment-new.html">Nächsten Check anlegen</a>
-              </div>
+            <button class="button button--ghost button--small">Maßnahmen zuordnen</button>
+          </header>
+          <div class="timeline">
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <strong>KW 43 – Secure DevOps Clinic</strong>
+              <p>Lernpfad für Milan Ortiz &amp; Ben Falk, Fokus: Secrets Management.</p>
             </div>
-          </article>
-        </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <strong>KW 44 – Prompt Excellence Sprint</strong>
+              <p>Mentor:in Nina Berger &amp; Jonas Brandt – Prompt Patterns für KI-Assistent Suite.</p>
+            </div>
+            <div class="timeline__item">
+              <span class="timeline__dot"></span>
+              <strong>KW 46 – UX Field Study Hub</strong>
+              <p>Shadowing für Lina Vogt zur Vorbereitung auf SkillRadar Dashboard.</p>
+            </div>
+          </div>
+        </article>
       </section>
     </main>
   </div>

@@ -13,60 +13,121 @@
   <div class="app-shell">
     <aside class="sidebar">
       <div class="sidebar__branding">
-        <div class="sidebar__logo">ASM</div>
-        <div class="sidebar__branding-text">
-          <h1>Agile Skill Matrix</h1>
-          <p>Team-Kompetenzen sichtbar machen</p>
-        </div>
+        <a class="sidebar__home" href="index.html">
+          <div class="sidebar__logo">ASM</div>
+          <div class="sidebar__branding-text">
+            <h1>Agile Skill Matrix</h1>
+            <p>Team-Kompetenzen sichtbar machen</p>
+          </div>
+        </a>
         <button class="sidebar__toggle" data-sidebar-toggle aria-label="Navigation minimieren" aria-expanded="true">
           <span class="sidebar__toggle-icon" aria-hidden="true"></span>
         </button>
       </div>
+      
+
       <nav class="sidebar__nav">
-        <a class="nav-link" data-page="team-overview" href="index.html">
-          <span class="nav-link__icon" aria-hidden="true">📊</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Team-Heatmap</span>
-            <small>Kompetenzabdeckung &amp; Gaps</small>
-          </span>
-        </a>
-        <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
-          <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Entwicklerprofile</span>
-            <small>Ratings, Evidenzen &amp; Maßnahmen</small>
-          </span>
-        </a>
-        <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
-          <span class="nav-link__icon" aria-hidden="true">📚</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Kompetenzkatalog</span>
-            <small>Definitionen &amp; Lehrgänge</small>
-          </span>
-        </a>
-        <a class="nav-link" data-page="training-planner" href="training-planner.html">
-          <span class="nav-link__icon" aria-hidden="true">🗂️</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Lehrgangsplanung</span>
-            <small>Skill-Gaps schließen</small>
-          </span>
-        </a>
-        <a class="nav-link" data-page="assignment-check" href="assignment-check.html">
-          <span class="nav-link__icon" aria-hidden="true">✅</span>
-          <span class="nav-link__text">
-            <span class="nav-link__title">Aufgaben-Check</span>
-            <small>Einsatzfähigkeit prüfen</small>
-          </span>
-        </a>
+        <div class="nav-section" data-section="heatmap">
+          <a class="nav-link" data-page="heatmap" href="heatmap.html">
+            <span class="nav-link__icon" aria-hidden="true">📊</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Heatmap</span>
+              <small>Kompetenzabdeckung</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Heatmap-Ansichten">
+            <a class="nav-sublink" data-page="heatmap-team" href="heatmap-team.html" title="Team-Heatmap" aria-label="Team-Heatmap">
+              <span class="nav-sublink__icon" aria-hidden="true">👥</span>
+              <span class="visually-hidden">Team-Heatmap</span>
+            </a>
+            <a class="nav-sublink" data-page="heatmap-developer" href="heatmap-developer.html" title="Entwickler-Heatmap" aria-label="Entwickler-Heatmap">
+              <span class="nav-sublink__icon" aria-hidden="true">🧑‍💻</span>
+              <span class="visually-hidden">Entwickler-Heatmap</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="projects">
+          <a class="nav-link" data-page="projects" href="projects.html">
+            <span class="nav-link__icon" aria-hidden="true">🧩</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Projekte</span>
+              <small>Portfolio &amp; Bedarf</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Projekte Aktionen">
+            <a class="nav-sublink" data-page="project-new" href="project-new.html" title="Projekt anlegen" aria-label="Projekt anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Projekt anlegen</span>
+            </a>
+            <a class="nav-sublink" data-page="project-edit" href="project-edit.html" title="Projekt bearbeiten" aria-label="Projekt bearbeiten">
+              <span class="nav-sublink__icon" aria-hidden="true">🛠️</span>
+              <span class="visually-hidden">Projekt bearbeiten</span>
+            </a>
+            <a class="nav-sublink" data-page="team-project-alignment" href="team-project-alignment.html" title="Team-Projekt-Abgleich" aria-label="Team-Projekt-Abgleich">
+              <span class="nav-sublink__icon" aria-hidden="true">📈</span>
+              <span class="visually-hidden">Team-Projekt-Abgleich</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="developer-profiles">
+          <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
+            <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Entwicklerprofile</span>
+              <small>Ratings &amp; Evidenzen</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Profilaktionen">
+            <a class="nav-sublink" data-page="developer-profile-new" href="developer-profile-new.html" title="Profil anlegen" aria-label="Profil anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Profil anlegen</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="skill-catalog">
+          <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
+            <span class="nav-link__icon" aria-hidden="true">📚</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Kompetenzkatalog</span>
+              <small>Definitionen &amp; Pfade</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Katalogaktionen">
+            <a class="nav-sublink" data-page="skill-catalog-new" href="skill-catalog-new.html" title="Kompetenz anlegen" aria-label="Kompetenz anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Kompetenz anlegen</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="training-planner">
+          <a class="nav-link" data-page="training-planner" href="training-planner.html">
+            <span class="nav-link__icon" aria-hidden="true">🗂️</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Lehrgangsplanung</span>
+              <small>Skill-Gaps schließen</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Lehrgangsaktionen">
+            <a class="nav-sublink" data-page="training-planner-new" href="training-planner-new.html" title="Lehrgang anlegen" aria-label="Lehrgang anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Lehrgang anlegen</span>
+            </a>
+          </div>
+        </div>
       </nav>
-      <section class="sidebar__info">
-        <h2>Nächste Schritte</h2>
-        <ul>
-          <li>Self-Service Bewertung aktivieren</li>
-          <li>CSV-Export vorbereiten</li>
-          <li>Stakeholder-Review planen</li>
-        </ul>
-      </section>
+      <footer class="sidebar__footer">
+        <button class="sidebar__theme-toggle" type="button" data-theme-toggle data-theme-mode="light" aria-label="Hell-/Dunkelmodus umschalten">
+          <span class="sidebar__theme-icon sidebar__theme-icon--light" aria-hidden="true">🌞</span>
+          <span class="sidebar__theme-icon sidebar__theme-icon--dark" aria-hidden="true">🌙</span>
+          <span class="sidebar__footer-label">Modus</span>
+        </button>
+        <a class="sidebar__footer-link" data-page="settings" href="settings.html" title="Einstellungen öffnen">
+          <span class="sidebar__footer-icon" aria-hidden="true">⚙️</span>
+          <span class="sidebar__footer-label">Einstellungen</span>
+        </a>
+      </footer>
+
+
     </aside>
 
     <main class="content">
@@ -81,102 +142,179 @@
         </div>
       </header>
 
-      <section>
-        <div class="panel-grid panel-grid--two">
-          <article class="panel profile">
-            <header class="panel__header">
-              <div class="profile__header">
-                <div class="avatar">S</div>
-                <div>
-                  <h3>Sarah König</h3>
-                  <p>Lead Developer · Team Alpha</p>
-                </div>
-              </div>
-              <button class="button button--ghost button--small">Profil teilen</button>
-            </header>
-            <div class="profile__ratings">
-              <div class="rating-item">
-                <div>
-                  <strong>Secure Coding (OWASP Top 10, Umgang mit Secrets)</strong>
-                  <span class="rating-item__evidence">Letztes Update: 12.09.2025 · Threat Model Epic-42</span>
-                </div>
-                <div class="rating-item__stars" data-stars="4"></div>
-              </div>
-              <div class="rating-item">
-                <div>
-                  <strong>Continuous Integration / Continuous Delivery (CI/CD-Pipelines)</strong>
-                  <span class="rating-item__evidence">Letztes Update: 01.08.2025 · Pipeline Redesign</span>
-                </div>
-                <div class="rating-item__stars" data-stars="5"></div>
-              </div>
-              <div class="rating-item">
-                <div>
-                  <strong>Testautomatisierung (Unit-, Integrations-, End-to-End-Tests)</strong>
-                  <span class="rating-item__evidence">Letztes Update: 25.08.2025 · Cypress E2E</span>
-                </div>
-                <div class="rating-item__stars" data-stars="3"></div>
-              </div>
-            </div>
-            <div class="profile__actions">
-              <button class="button button--primary">Neue Bewertung</button>
-              <button class="button button--ghost">Evidenz anhängen</button>
-            </div>
-            <footer class="profile__footer">
-              <h4>Vorgeschlagene Maßnahmen</h4>
-              <ul>
-                <li>KI-Tooling Playground – Guided Session (Q4)</li>
-                <li>Secure Coding Refresh – OWASP Fokus</li>
-              </ul>
-            </footer>
-          </article>
-
-          <article class="panel profile">
-            <header class="panel__header">
-              <div class="profile__header">
-                <div class="avatar">J</div>
-                <div>
-                  <h3>Jonas Winter</h3>
-                  <p>DevOps Engineer · Team Alpha</p>
-                </div>
-              </div>
-              <button class="button button--ghost button--small">Profil teilen</button>
-            </header>
-            <div class="profile__ratings">
-              <div class="rating-item">
-                <div>
-                  <strong>Continuous Integration / Continuous Delivery (CI/CD-Pipelines)</strong>
-                  <span class="rating-item__evidence">Letztes Update: 07.09.2025 · GitOps PoC</span>
-                </div>
-                <div class="rating-item__stars" data-stars="3"></div>
-              </div>
-              <div class="rating-item">
-                <div>
-                  <strong>Cloud-Plattformen (AWS, Azure, GCP)</strong>
-                  <span class="rating-item__evidence">Letztes Update: 15.07.2025 · Landing Zone</span>
-                </div>
-                <div class="rating-item__stars" data-stars="4"></div>
-              </div>
-              <div class="rating-item">
-                <div>
-                  <strong>Monitoring und Observability (Logs, Metrics, Tracing, Prometheus, Grafana)</strong>
-                  <span class="rating-item__evidence">Letztes Update: 29.08.2025 · Grafana Dashboards</span>
-                </div>
-                <div class="rating-item__stars" data-stars="3"></div>
-              </div>
-            </div>
-            <div class="profile__actions">
-              <button class="button button--primary">Maßnahme planen</button>
-              <button class="button button--ghost">Selbstbewertung anfragen</button>
-            </div>
-            <footer class="profile__footer">
-              <h4>Fokus Q4</h4>
-              <ul>
-                <li>Kubernetes Platform Runbook finalisieren</li>
-                <li>KI-gestützte Incident Response Pilot</li>
-              </ul>
-            </footer>
-          </article>
+      <section class="panel">
+        <header class="panel__header">
+          <div>
+            <h3>Cross-funktionale Teams</h3>
+            <p class="panel__subtitle">Drei autonome Teams, jeweils mit sieben Mitgliedern und vollständiger Skill-Abdeckung.</p>
+          </div>
+        </header>
+        <div class="team-summary">
+          <div>
+            <strong>21 Expert:innen</strong>
+            <span>Product, Engineering, Data &amp; Enablement Rollen</span>
+          </div>
+          <div>
+            <strong>7 Kernkompetenzen</strong>
+            <span>Security, AI, UX, Platform, Delivery, Mobile, Analytics</span>
+          </div>
+          <div>
+            <strong>0 Abhängigkeiten</strong>
+            <span>Alle Teams können End-to-End liefern</span>
+          </div>
         </div>
+      </section>
+
+      <section class="panel-grid panel-grid--responsive">
+        <article class="panel team-card">
+          <header class="panel__header">
+            <div>
+              <h3>Team Aurora</h3>
+              <p class="panel__subtitle">Digital Products · Fokus KI-getriebene Experiences</p>
+            </div>
+            <span class="badge badge--primary">autonom</span>
+          </header>
+          <ul class="team-card__members">
+            <li>
+              <span class="team-card__name">Sarah König</span>
+              <span class="team-card__role">Lead Developer</span>
+              <span class="team-card__skills">Secure Coding · CI/CD · Prompt Patterns</span>
+            </li>
+            <li>
+              <span class="team-card__name">Milan Ortiz</span>
+              <span class="team-card__role">MLOps Engineer</span>
+              <span class="team-card__skills">Model Ops · Terraform · Observability</span>
+            </li>
+            <li>
+              <span class="team-card__name">Lea Fischer</span>
+              <span class="team-card__role">Product Designer</span>
+              <span class="team-card__skills">Service Design · UX Research · Facilitation</span>
+            </li>
+            <li>
+              <span class="team-card__name">Jonas Brandt</span>
+              <span class="team-card__role">Backend Engineer</span>
+              <span class="team-card__skills">Kotlin · Event Sourcing · API Security</span>
+            </li>
+            <li>
+              <span class="team-card__name">Emma Schulte</span>
+              <span class="team-card__role">QA Lead</span>
+              <span class="team-card__skills">Testautomation · Accessibility Audits · Load Testing</span>
+            </li>
+            <li>
+              <span class="team-card__name">Marco Petrov</span>
+              <span class="team-card__role">Frontend Engineer</span>
+              <span class="team-card__skills">React · Design Systems · Web Performance</span>
+            </li>
+            <li>
+              <span class="team-card__name">Helena Krüger</span>
+              <span class="team-card__role">Agile Coach</span>
+              <span class="team-card__skills">OKRs · Retros · Stakeholder Alignment</span>
+            </li>
+          </ul>
+          <footer class="team-card__footer">
+            <p>Team Aurora liefert KI-gestützte Journeys eigenständig – von Discovery bis Rollout.</p>
+          </footer>
+        </article>
+
+        <article class="panel team-card">
+          <header class="panel__header">
+            <div>
+              <h3>Team Borealis</h3>
+              <p class="panel__subtitle">Platform Services · Fokus sichere Skalierung</p>
+            </div>
+            <span class="badge badge--primary">autonom</span>
+          </header>
+          <ul class="team-card__members">
+            <li>
+              <span class="team-card__name">Daniel Weber</span>
+              <span class="team-card__role">Platform Architect</span>
+              <span class="team-card__skills">Kubernetes · Security Hardening · FinOps</span>
+            </li>
+            <li>
+              <span class="team-card__name">Nina Berger</span>
+              <span class="team-card__role">Data Scientist</span>
+              <span class="team-card__skills">Prompt Engineering · Feature Stores · Drift Monitoring</span>
+            </li>
+            <li>
+              <span class="team-card__name">Tobias Engel</span>
+              <span class="team-card__role">Backend Engineer</span>
+              <span class="team-card__skills">Go · Event Streaming · API Governance</span>
+            </li>
+            <li>
+              <span class="team-card__name">Lara Walther</span>
+              <span class="team-card__role">UX Researcher</span>
+              <span class="team-card__skills">Discovery · Jobs-to-be-done · Field Studies</span>
+            </li>
+            <li>
+              <span class="team-card__name">Felix Hahn</span>
+              <span class="team-card__role">DevOps Engineer</span>
+              <span class="team-card__skills">Infrastructure as Code · Observability · On-call</span>
+            </li>
+            <li>
+              <span class="team-card__name">Katja Meier</span>
+              <span class="team-card__role">Scrum Master</span>
+              <span class="team-card__skills">Team Health · Facilitation · Delivery Coaching</span>
+            </li>
+            <li>
+              <span class="team-card__name">Oliver Sturm</span>
+              <span class="team-card__role">Security Specialist</span>
+              <span class="team-card__skills">Threat Modeling · Zero Trust · Compliance</span>
+            </li>
+          </ul>
+          <footer class="team-card__footer">
+            <p>Team Borealis verantwortet sichere Plattform-Services inklusive Governance und Enablement.</p>
+          </footer>
+        </article>
+
+        <article class="panel team-card">
+          <header class="panel__header">
+            <div>
+              <h3>Team Cosmos</h3>
+              <p class="panel__subtitle">Data &amp; Experience · Fokus Echtzeit-Insights</p>
+            </div>
+            <span class="badge badge--primary">autonom</span>
+          </header>
+          <ul class="team-card__members">
+            <li>
+              <span class="team-card__name">Maja Riedl</span>
+              <span class="team-card__role">Data Engineer</span>
+              <span class="team-card__skills">Pipelines · dbt · Data Quality</span>
+            </li>
+            <li>
+              <span class="team-card__name">Ben Falk</span>
+              <span class="team-card__role">Site Reliability Engineer</span>
+              <span class="team-card__skills">Incident Response · Chaos Engineering · Automation</span>
+            </li>
+            <li>
+              <span class="team-card__name">Lina Vogt</span>
+              <span class="team-card__role">UX Lead</span>
+              <span class="team-card__skills">Design Systems · Accessibility · Prototyping</span>
+            </li>
+            <li>
+              <span class="team-card__name">Sophia Hartmann</span>
+              <span class="team-card__role">Mobile Engineer</span>
+              <span class="team-card__skills">Swift · Android · Offline First</span>
+            </li>
+            <li>
+              <span class="team-card__name">Noah Keller</span>
+              <span class="team-card__role">Product Manager</span>
+              <span class="team-card__skills">Value Mapping · Roadmapping · Stakeholder Management</span>
+            </li>
+            <li>
+              <span class="team-card__name">Mira Stein</span>
+              <span class="team-card__role">Fullstack Engineer</span>
+              <span class="team-card__skills">Node.js · GraphQL · Cloud Functions</span>
+            </li>
+            <li>
+              <span class="team-card__name">Jakob Sommer</span>
+              <span class="team-card__role">Business Analyst</span>
+              <span class="team-card__skills">Process Mining · KPI Modeling · Risk Analysis</span>
+            </li>
+          </ul>
+          <footer class="team-card__footer">
+            <p>Team Cosmos liefert Datenprodukte mit hoher Customer Experience und SRE-Standards.</p>
+          </footer>
+        </article>
       </section>
     </main>
   </div>

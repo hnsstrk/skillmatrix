@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agile Skill Matrix – Projekt bearbeiten</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="project-edit">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__branding">
+        <a class="sidebar__home" href="index.html">
+          <div class="sidebar__logo">ASM</div>
+          <div class="sidebar__branding-text">
+            <h1>Agile Skill Matrix</h1>
+            <p>Team-Kompetenzen sichtbar machen</p>
+          </div>
+        </a>
+        <button class="sidebar__toggle" data-sidebar-toggle aria-label="Navigation minimieren" aria-expanded="true">
+          <span class="sidebar__toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+      
+
+      <nav class="sidebar__nav">
+        <div class="nav-section" data-section="heatmap">
+          <a class="nav-link" data-page="heatmap" href="heatmap.html">
+            <span class="nav-link__icon" aria-hidden="true">📊</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Heatmap</span>
+              <small>Kompetenzabdeckung</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Heatmap-Ansichten">
+            <a class="nav-sublink" data-page="heatmap-team" href="heatmap-team.html" title="Team-Heatmap" aria-label="Team-Heatmap">
+              <span class="nav-sublink__icon" aria-hidden="true">👥</span>
+              <span class="visually-hidden">Team-Heatmap</span>
+            </a>
+            <a class="nav-sublink" data-page="heatmap-developer" href="heatmap-developer.html" title="Entwickler-Heatmap" aria-label="Entwickler-Heatmap">
+              <span class="nav-sublink__icon" aria-hidden="true">🧑‍💻</span>
+              <span class="visually-hidden">Entwickler-Heatmap</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="projects">
+          <a class="nav-link" data-page="projects" href="projects.html">
+            <span class="nav-link__icon" aria-hidden="true">🧩</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Projekte</span>
+              <small>Portfolio &amp; Bedarf</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Projekte Aktionen">
+            <a class="nav-sublink" data-page="project-new" href="project-new.html" title="Projekt anlegen" aria-label="Projekt anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Projekt anlegen</span>
+            </a>
+            <a class="nav-sublink" data-page="project-edit" href="project-edit.html" title="Projekt bearbeiten" aria-label="Projekt bearbeiten">
+              <span class="nav-sublink__icon" aria-hidden="true">🛠️</span>
+              <span class="visually-hidden">Projekt bearbeiten</span>
+            </a>
+            <a class="nav-sublink" data-page="team-project-alignment" href="team-project-alignment.html" title="Team-Projekt-Abgleich" aria-label="Team-Projekt-Abgleich">
+              <span class="nav-sublink__icon" aria-hidden="true">📈</span>
+              <span class="visually-hidden">Team-Projekt-Abgleich</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="developer-profiles">
+          <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
+            <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Entwicklerprofile</span>
+              <small>Ratings &amp; Evidenzen</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Profilaktionen">
+            <a class="nav-sublink" data-page="developer-profile-new" href="developer-profile-new.html" title="Profil anlegen" aria-label="Profil anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Profil anlegen</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="skill-catalog">
+          <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
+            <span class="nav-link__icon" aria-hidden="true">📚</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Kompetenzkatalog</span>
+              <small>Definitionen &amp; Pfade</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Katalogaktionen">
+            <a class="nav-sublink" data-page="skill-catalog-new" href="skill-catalog-new.html" title="Kompetenz anlegen" aria-label="Kompetenz anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Kompetenz anlegen</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="training-planner">
+          <a class="nav-link" data-page="training-planner" href="training-planner.html">
+            <span class="nav-link__icon" aria-hidden="true">🗂️</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Lehrgangsplanung</span>
+              <small>Skill-Gaps schließen</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Lehrgangsaktionen">
+            <a class="nav-sublink" data-page="training-planner-new" href="training-planner-new.html" title="Lehrgang anlegen" aria-label="Lehrgang anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Lehrgang anlegen</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <footer class="sidebar__footer">
+        <button class="sidebar__theme-toggle" type="button" data-theme-toggle data-theme-mode="light" aria-label="Hell-/Dunkelmodus umschalten">
+          <span class="sidebar__theme-icon sidebar__theme-icon--light" aria-hidden="true">🌞</span>
+          <span class="sidebar__theme-icon sidebar__theme-icon--dark" aria-hidden="true">🌙</span>
+          <span class="sidebar__footer-label">Modus</span>
+        </button>
+        <a class="sidebar__footer-link" data-page="settings" href="settings.html" title="Einstellungen öffnen">
+          <span class="sidebar__footer-icon" aria-hidden="true">⚙️</span>
+          <span class="sidebar__footer-label">Einstellungen</span>
+        </a>
+      </footer>
+
+
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span class="badge badge--primary">MVP Mockup</span>
+          <h2>Projekt bearbeiten - KIA-23</h2>
+        </div>
+        <div class="topbar__actions">
+          <a class="button button--ghost" href="projects.html">Zurück zur Übersicht</a>
+          <button class="button button--ghost">Änderungshistorie</button>
+          <button class="button button--primary">Änderungen speichern</button>
+        </div>
+      </header>
+
+      <section class="project-edit">
+        <div class="panel-grid panel-grid--two">
+          <article class="panel">
+            <header class="panel__header">
+              <div>
+                <h3>Projektbasis</h3>
+                <p class="panel__subtitle">Stammdaten &amp; Zielbild</p>
+              </div>
+            </header>
+            <form class="project-form">
+              <label>
+                <span>Projektname</span>
+                <input type="text" value="KI-Assistent Suite" />
+              </label>
+              <label>
+                <span>Projektkürzel</span>
+                <input type="text" value="KIA-23" />
+              </label>
+              <label>
+                <span>Beschreibung</span>
+                <textarea rows="5">Servicepaket für Texterstellung, Ticket-Vorbereitung und Lessons Learned.</textarea>
+              </label>
+              <label>
+                <span>Business Value</span>
+                <textarea rows="3">Reduziert Ticketdurchlaufzeiten um 25% und verbessert Wissensmanagement.</textarea>
+              </label>
+              <label>
+                <span>Status</span>
+                <select>
+                  <option>Kickoff</option>
+                  <option selected>In Umsetzung</option>
+                  <option>Abgeschlossen</option>
+                </select>
+              </label>
+            </form>
+          </article>
+
+          <article class="panel">
+            <header class="panel__header">
+              <div>
+                <h3>Projektsteuerung</h3>
+                <p class="panel__subtitle">Teams, Meilensteine &amp; Verantwortliche</p>
+              </div>
+            </header>
+            <form class="project-form">
+              <label>
+                <span>Zeitraum</span>
+                <input type="text" value="KW 37 – KW 47" />
+              </label>
+              <label>
+                <span>Product Owner</span>
+                <input type="text" value="Lea Schneider" />
+              </label>
+              <label>
+                <span>Hauptteam</span>
+                <select>
+                  <option selected>Team Aurora</option>
+                  <option>Team Borealis</option>
+                  <option>Team Cosmos</option>
+                </select>
+              </label>
+              <label>
+                <span>Unterstützende Teams</span>
+                <select multiple>
+                  <option selected>Team Borealis</option>
+                  <option>Team Delta</option>
+                  <option>Externes Chapter</option>
+                </select>
+              </label>
+              <label>
+                <span>Nächster Meilenstein</span>
+                <input type="text" value="Pilot Go-Live - KW 47" />
+              </label>
+            </form>
+          </article>
+        </div>
+
+        <article class="panel" id="skills">
+          <header class="panel__header panel__header--split">
+            <div>
+              <h3>Skill-Zuordnung</h3>
+              <p class="panel__subtitle">Mindestlevel je Kompetenz &amp; zuständiges Chapter</p>
+            </div>
+            <div class="project-form__actions-group">
+              <button class="button button--ghost button--small">Skill hinzufügen</button>
+              <button class="button button--ghost button--small">Aus Katalog abgleichen</button>
+            </div>
+          </header>
+          <div class="project-matrix">
+            <table>
+              <thead>
+                <tr>
+                  <th>Kompetenz</th>
+                  <th>Mindestlevel</th>
+                  <th>Chapter Owner</th>
+                  <th>Maßnahmen</th>
+                  <th>Aktionen</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Python</td>
+                  <td>
+                    <select>
+                      <option>>= 2★</option>
+                      <option>>= 3★</option>
+                      <option selected>>= 4★</option>
+                      <option>>= 5★</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select>
+                      <option>Engineering Excellence</option>
+                      <option selected>AI Chapter</option>
+                      <option>Platform Chapter</option>
+                    </select>
+                  </td>
+                  <td>Pairing mit Jonas - Training ML Tooling</td>
+                  <td>
+                    <button class="button button--ghost button--small">Entfernen</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Prompt Engineering</td>
+                  <td>
+                    <select>
+                      <option>>= 2★</option>
+                      <option selected>>= 3★</option>
+                      <option>>= 4★</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select>
+                      <option>AI Chapter</option>
+                      <option selected>Innovation Hub</option>
+                      <option>Platform Chapter</option>
+                    </select>
+                  </td>
+                  <td>Guideline-Workshop - Mentor: Sarah</td>
+                  <td>
+                    <button class="button button--ghost button--small">Ersetzen</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>DataOps</td>
+                  <td>
+                    <select>
+                      <option>>= 2★</option>
+                      <option selected>>= 3★</option>
+                      <option>>= 4★</option>
+                    </select>
+                  </td>
+                  <td>
+                    <select>
+                      <option>Engineering Excellence</option>
+                      <option>AI Chapter</option>
+                      <option selected>Platform Chapter</option>
+                    </select>
+                  </td>
+                  <td>Shadowing bei Team Borealis - Automatisierte Tests</td>
+                  <td>
+                    <button class="button button--ghost button--small">Archivieren</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="panel-grid panel-grid--responsive">
+          <article class="panel" id="risks">
+            <header class="panel__header">
+              <div>
+                <h3>Risiken</h3>
+                <p class="panel__subtitle">Status der aktuellen Maßnahmen</p>
+              </div>
+            </header>
+            <ul class="status-list status-list--compact">
+              <li>
+                <div class="status-list__header">
+                  <strong>DataOps Kapazität</strong>
+                  <span class="badge badge--warning">offen</span>
+                </div>
+                <p>Zusätzliche Ressourcen aus Team Borealis bestätigt, Start KW 42.</p>
+                <a class="status-list__link" href="#">Maßnahme aktualisieren</a>
+              </li>
+              <li>
+                <div class="status-list__header">
+                  <strong>Prompt Library</strong>
+                  <span class="badge badge--draft">in Arbeit</span>
+                </div>
+                <p>Version 1.0 wartet auf Review durch AI Chapter.</p>
+                <a class="status-list__link" href="#">Review planen</a>
+              </li>
+              <li>
+                <div class="status-list__header">
+                  <strong>Sicherheitstests</strong>
+                  <span class="badge badge--ok">im Plan</span>
+                </div>
+                <p>DAST-Suite vorbereitet, Durchführung in KW 44.</p>
+              </li>
+            </ul>
+          </article>
+
+          <article class="panel" id="decisions">
+            <header class="panel__header">
+              <div>
+                <h3>Entscheidungen &amp; Notizen</h3>
+                <p class="panel__subtitle">Dokumentation Steering Committee</p>
+              </div>
+              <button class="button button--ghost button--small">Neuen Eintrag</button>
+            </header>
+            <div class="timeline">
+              <div class="timeline__item">
+                <span class="timeline__dot"></span>
+                <strong>03.10. - Prompt Guidelines</strong>
+                <p>Freigegeben durch AI Chapter - gilt für alle Customer-Facing Prompts.</p>
+              </div>
+              <div class="timeline__item">
+                <span class="timeline__dot"></span>
+                <strong>01.10. - Datenschutzkonzept</strong>
+                <p>Zugelassen, sofern Anonymisierung vor Persistenz erfolgt.</p>
+              </div>
+              <div class="timeline__item">
+                <span class="timeline__dot"></span>
+                <strong>27.09. - MVP Umfang</strong>
+                <p>Chat-Widget verschoben auf Phase 2, Fokus auf Ticket-Handover.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
