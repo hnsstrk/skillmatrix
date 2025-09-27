@@ -1,0 +1,1657 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agile Skill Matrix – Entwicklerprofil</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body data-page="developer-profiles" data-profile-page="detail">
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="sidebar__branding">
+        <a class="sidebar__home" href="index.html">
+          <div class="sidebar__logo">ASM</div>
+          <div class="sidebar__branding-text">
+            <h1>Agile Skill Matrix</h1>
+            <p>Team-Kompetenzen sichtbar machen</p>
+          </div>
+        </a>
+        <button class="sidebar__toggle" data-sidebar-toggle aria-label="Navigation minimieren" aria-expanded="true">
+          <span class="sidebar__toggle-icon" aria-hidden="true"></span>
+        </button>
+      </div>
+
+
+      <nav class="sidebar__nav">
+        <div class="nav-section" data-section="heatmap">
+          <a class="nav-link" data-page="heatmap" href="heatmap.html">
+            <span class="nav-link__icon" aria-hidden="true">📊</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Heatmap</span>
+              <small>Kompetenzabdeckung</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Heatmap-Ansichten">
+            <a class="nav-sublink" data-page="heatmap-team" href="heatmap-team.html" title="Team-Heatmap" aria-label="Team-Heatmap">
+              <span class="nav-sublink__icon" aria-hidden="true">👥</span>
+              <span class="visually-hidden">Team-Heatmap</span>
+            </a>
+            <a class="nav-sublink" data-page="heatmap-developer" href="heatmap-developer.html" title="Entwickler-Heatmap" aria-label="Entwickler-Heatmap">
+              <span class="nav-sublink__icon" aria-hidden="true">🧑‍💻</span>
+              <span class="visually-hidden">Entwickler-Heatmap</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="projects">
+          <a class="nav-link" data-page="projects" href="projects.html">
+            <span class="nav-link__icon" aria-hidden="true">🧩</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Projekte</span>
+              <small>Portfolio &amp; Bedarf</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Projekte Aktionen">
+            <a class="nav-sublink" data-page="project-new" href="project-new.html" title="Projekt anlegen" aria-label="Projekt anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Projekt anlegen</span>
+            </a>
+            <a class="nav-sublink" data-page="project-edit" href="project-edit.html" title="Projekt bearbeiten" aria-label="Projekt bearbeiten">
+              <span class="nav-sublink__icon" aria-hidden="true">🛠️</span>
+              <span class="visually-hidden">Projekt bearbeiten</span>
+            </a>
+            <a class="nav-sublink" data-page="team-project-alignment" href="team-project-alignment.html" title="Team-Projekt-Abgleich" aria-label="Team-Projekt-Abgleich">
+              <span class="nav-sublink__icon" aria-hidden="true">📈</span>
+              <span class="visually-hidden">Team-Projekt-Abgleich</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="developer-profiles">
+          <a class="nav-link" data-page="developer-profiles" href="developer-profiles.html">
+            <span class="nav-link__icon" aria-hidden="true">🧑‍💻</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Entwicklerprofile</span>
+              <small>Ratings &amp; Evidenzen</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Profilaktionen">
+            <a class="nav-sublink" data-page="developer-profile-new" href="developer-profile-new.html" title="Profil anlegen" aria-label="Profil anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Profil anlegen</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="skill-catalog">
+          <a class="nav-link" data-page="skill-catalog" href="skill-catalog.html">
+            <span class="nav-link__icon" aria-hidden="true">📚</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Kompetenzkatalog</span>
+              <small>Definitionen &amp; Pfade</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Katalogaktionen">
+            <a class="nav-sublink" data-page="skill-catalog-new" href="skill-catalog-new.html" title="Kompetenz anlegen" aria-label="Kompetenz anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Kompetenz anlegen</span>
+            </a>
+          </div>
+        </div>
+        <div class="nav-section" data-section="training-planner">
+          <a class="nav-link" data-page="training-planner" href="training-planner.html">
+            <span class="nav-link__icon" aria-hidden="true">🗂️</span>
+            <span class="nav-link__text">
+              <span class="nav-link__title">Lehrgangsplanung</span>
+              <small>Skill-Gaps schließen</small>
+            </span>
+          </a>
+          <div class="nav-subnav" role="group" aria-label="Lehrgangsaktionen">
+            <a class="nav-sublink" data-page="training-planner-new" href="training-planner-new.html" title="Lehrgang anlegen" aria-label="Lehrgang anlegen">
+              <span class="nav-sublink__icon" aria-hidden="true">➕</span>
+              <span class="visually-hidden">Lehrgang anlegen</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+      <footer class="sidebar__footer">
+        <button class="sidebar__theme-toggle" type="button" data-theme-toggle data-theme-mode="light" aria-label="Hell-/Dunkelmodus umschalten">
+          <span class="sidebar__theme-icon sidebar__theme-icon--light" aria-hidden="true">🌞</span>
+          <span class="sidebar__theme-icon sidebar__theme-icon--dark" aria-hidden="true">🌙</span>
+          <span class="sidebar__footer-label">Modus</span>
+        </button>
+        <a class="sidebar__footer-link" data-page="settings" href="settings.html" title="Einstellungen öffnen">
+          <span class="sidebar__footer-icon" aria-hidden="true">⚙️</span>
+          <span class="sidebar__footer-label">Einstellungen</span>
+        </a>
+      </footer>
+
+
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div class="breadcrumbs">
+          <span class="badge badge--primary">MVP Mockup</span>
+          <h2 data-profile-field="name">Sarah König</h2>
+          <p class="panel__subtitle" data-profile-field="role">Lead Developer</p>
+        </div>
+        <div class="topbar__actions">
+          <a class="button button--ghost" href="developer-profiles.html">Zurück zur Übersicht</a>
+          <button class="button button--primary" type="button">Profil exportieren</button>
+        </div>
+      </header>
+
+      <section class="panel profile-hero" data-profile-section="hero">
+        <div class="profile-hero__header">
+          <div class="profile-hero__identity">
+            <div class="profile-hero__avatar" data-profile-field="initials">SK</div>
+            <div>
+              <h3 data-profile-field="name">Sarah König</h3>
+              <p class="profile-hero__role" data-profile-field="role">Lead Developer</p>
+            </div>
+          </div>
+          <div class="profile-hero__meta">
+            <div>
+              <span class="profile-hero__label">Team</span>
+              <strong data-profile-field="team">Team Aurora</strong>
+            </div>
+            <div>
+              <span class="profile-hero__label">Level</span>
+              <strong data-profile-field="level">Lead · 4★</strong>
+            </div>
+            <div>
+              <span class="profile-hero__label">Aktueller Fokus</span>
+              <strong data-profile-field="focus">Secure Coding</strong>
+            </div>
+          </div>
+        </div>
+        <p class="profile-hero__summary" data-profile-field="summary">Teamlead für sichere AI Journeys. Baut Security Champions auf und betreibt Pairing über alle Streams.</p>
+        <div class="profile-hero__tags" data-profile-tags></div>
+        <div class="profile-meta__chips" data-profile-chips></div>
+      </section>
+
+      <section class="panel profile-skills" data-profile-section="skills">
+        <header class="panel__header panel__header--split">
+          <div>
+            <h3>Kompetenzmatrix</h3>
+            <p class="panel__subtitle" data-profile-field="matrixSubtitle">Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.</p>
+          </div>
+          <div class="project-form__actions-group">
+            <button class="button button--ghost" type="button">Matrix exportieren</button>
+            <a class="button button--primary" href="training-planner.html">Lehrgang planen</a>
+          </div>
+        </header>
+        <table class="profile-skills__table">
+          <thead>
+            <tr>
+              <th>Fähigkeit</th>
+              <th>Level</th>
+              <th>Nachweise &amp; Kontext</th>
+            </tr>
+          </thead>
+          <tbody data-profile-skills></tbody>
+        </table>
+      </section>
+
+      <section class="panel profile-growth" data-profile-section="growth">
+        <header class="panel__header">
+          <div>
+            <h3>Entwicklungspfad</h3>
+            <p class="panel__subtitle">Abgestimmt mit Chapter Leads &amp; People Partner.</p>
+          </div>
+        </header>
+        <div class="profile-growth__grid">
+          <article class="profile-growth__group">
+            <h4>Stärken</h4>
+            <ul class="profile-growth__list" data-profile-strengths></ul>
+          </article>
+          <article class="profile-growth__group">
+            <h4>Nächste Schritte</h4>
+            <ul class="profile-growth__list" data-profile-growth></ul>
+          </article>
+          <article class="profile-growth__group">
+            <h4>Lernpfad &amp; Termine</h4>
+            <ul class="profile-growth__list" data-profile-learning></ul>
+          </article>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script type="application/json" id="developer-profile-data">{
+  "sarah-konig": {
+    "name": "Sarah König",
+    "role": "Lead Developer",
+    "team": "Team Aurora",
+    "level": "Lead · 4★",
+    "focus": "Secure Coding",
+    "summary": "Sarah König arbeitet im Team Aurora als Lead Developer und verankert Secure Coding gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Secure Coding",
+      "CI/CD",
+      "Prompt Patterns"
+    ],
+    "skills": [
+      {
+        "name": "Secure Coding",
+        "level": "5★",
+        "context": "Verankert Secure Coding in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "CI/CD",
+        "level": "4★",
+        "context": "Verankert CI/CD in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Prompt Patterns",
+        "level": "3★",
+        "context": "Verankert Prompt Patterns in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Secure Coding im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert CI/CD im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Secure Coding Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Secure Coding."
+      },
+      {
+        "title": "Neue Impulse zu Prompt Patterns",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Aurora."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Secure Coding",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Mentoring"
+    ]
+  },
+  "milan-ortiz": {
+    "name": "Milan Ortiz",
+    "role": "MLOps Engineer",
+    "team": "Team Aurora",
+    "level": "Senior · 3★",
+    "focus": "Model Ops",
+    "summary": "Milan Ortiz arbeitet im Team Aurora als MLOps Engineer und verankert Model Ops gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Model Ops",
+      "Terraform",
+      "Observability"
+    ],
+    "skills": [
+      {
+        "name": "Model Ops",
+        "level": "5★",
+        "context": "Verankert Model Ops in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Terraform",
+        "level": "4★",
+        "context": "Verankert Terraform in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Observability",
+        "level": "3★",
+        "context": "Verankert Observability in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Model Ops im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Terraform im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Model Ops Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Model Ops."
+      },
+      {
+        "title": "Neue Impulse zu Observability",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Aurora."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Model Ops",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "lea-fischer": {
+    "name": "Lea Fischer",
+    "role": "Product Designer",
+    "team": "Team Aurora",
+    "level": "Senior · 3★",
+    "focus": "Service Design",
+    "summary": "Lea Fischer arbeitet im Team Aurora als Product Designer und verankert Service Design gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Service Design",
+      "UX Research",
+      "Facilitation"
+    ],
+    "skills": [
+      {
+        "name": "Service Design",
+        "level": "5★",
+        "context": "Verankert Service Design in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "UX Research",
+        "level": "4★",
+        "context": "Verankert UX Research in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Facilitation",
+        "level": "3★",
+        "context": "Verankert Facilitation in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Service Design im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert UX Research im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Service Design Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Service Design."
+      },
+      {
+        "title": "Neue Impulse zu Facilitation",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Aurora."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Service Design",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "User Insights",
+      "Outcome Focus"
+    ]
+  },
+  "jonas-brandt": {
+    "name": "Jonas Brandt",
+    "role": "Backend Engineer",
+    "team": "Team Aurora",
+    "level": "Senior · 3★",
+    "focus": "Kotlin",
+    "summary": "Jonas Brandt arbeitet im Team Aurora als Backend Engineer und verankert Kotlin gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Kotlin",
+      "Event Sourcing",
+      "API Security"
+    ],
+    "skills": [
+      {
+        "name": "Kotlin",
+        "level": "5★",
+        "context": "Verankert Kotlin in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Event Sourcing",
+        "level": "4★",
+        "context": "Verankert Event Sourcing in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "API Security",
+        "level": "3★",
+        "context": "Verankert API Security in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Kotlin im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Event Sourcing im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Kotlin Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Kotlin."
+      },
+      {
+        "title": "Neue Impulse zu API Security",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Aurora."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Kotlin",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "emma-schulte": {
+    "name": "Emma Schulte",
+    "role": "QA Lead",
+    "team": "Team Aurora",
+    "level": "Lead · 4★",
+    "focus": "Testautomation",
+    "summary": "Emma Schulte arbeitet im Team Aurora als QA Lead und verankert Testautomation gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Testautomation",
+      "Accessibility Audits",
+      "Load Testing"
+    ],
+    "skills": [
+      {
+        "name": "Testautomation",
+        "level": "5★",
+        "context": "Verankert Testautomation in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Accessibility Audits",
+        "level": "4★",
+        "context": "Verankert Accessibility Audits in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Load Testing",
+        "level": "3★",
+        "context": "Verankert Load Testing in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Testautomation im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Accessibility Audits im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Testautomation Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Testautomation."
+      },
+      {
+        "title": "Neue Impulse zu Load Testing",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Aurora."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Testautomation",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Mentoring"
+    ]
+  },
+  "marco-petrov": {
+    "name": "Marco Petrov",
+    "role": "Frontend Engineer",
+    "team": "Team Aurora",
+    "level": "Senior · 3★",
+    "focus": "React",
+    "summary": "Marco Petrov arbeitet im Team Aurora als Frontend Engineer und verankert React gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "React",
+      "Design Systems",
+      "Web Performance"
+    ],
+    "skills": [
+      {
+        "name": "React",
+        "level": "5★",
+        "context": "Verankert React in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Design Systems",
+        "level": "4★",
+        "context": "Verankert Design Systems in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Web Performance",
+        "level": "3★",
+        "context": "Verankert Web Performance in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert React im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Design Systems im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "React Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu React."
+      },
+      {
+        "title": "Neue Impulse zu Web Performance",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Aurora."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: React",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "helena-kruger": {
+    "name": "Helena Krüger",
+    "role": "Agile Coach",
+    "team": "Team Aurora",
+    "level": "Lead · 4★",
+    "focus": "OKRs",
+    "summary": "Helena Krüger arbeitet im Team Aurora als Agile Coach und verankert OKRs gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "OKRs",
+      "Retros",
+      "Stakeholder Alignment"
+    ],
+    "skills": [
+      {
+        "name": "OKRs",
+        "level": "5★",
+        "context": "Verankert OKRs in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Retros",
+        "level": "4★",
+        "context": "Verankert Retros in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Stakeholder Alignment",
+        "level": "3★",
+        "context": "Verankert Stakeholder Alignment in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert OKRs im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Retros im Team Aurora durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "OKRs Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu OKRs."
+      },
+      {
+        "title": "Neue Impulse zu Stakeholder Alignment",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Aurora."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: OKRs",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Mentoring"
+    ]
+  },
+  "daniel-weber": {
+    "name": "Daniel Weber",
+    "role": "Platform Architect",
+    "team": "Team Borealis",
+    "level": "Lead · 4★",
+    "focus": "Kubernetes",
+    "summary": "Daniel Weber arbeitet im Team Borealis als Platform Architect und verankert Kubernetes gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Kubernetes",
+      "Security Hardening",
+      "FinOps"
+    ],
+    "skills": [
+      {
+        "name": "Kubernetes",
+        "level": "5★",
+        "context": "Verankert Kubernetes in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Security Hardening",
+        "level": "4★",
+        "context": "Verankert Security Hardening in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "FinOps",
+        "level": "3★",
+        "context": "Verankert FinOps in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Kubernetes im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Security Hardening im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Kubernetes Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Kubernetes."
+      },
+      {
+        "title": "Neue Impulse zu FinOps",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Borealis."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Kubernetes",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "nina-berger": {
+    "name": "Nina Berger",
+    "role": "Data Scientist",
+    "team": "Team Borealis",
+    "level": "Senior · 3★",
+    "focus": "Prompt Engineering",
+    "summary": "Nina Berger arbeitet im Team Borealis als Data Scientist und verankert Prompt Engineering gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Prompt Engineering",
+      "Feature Stores",
+      "Drift Monitoring"
+    ],
+    "skills": [
+      {
+        "name": "Prompt Engineering",
+        "level": "5★",
+        "context": "Verankert Prompt Engineering in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Feature Stores",
+        "level": "4★",
+        "context": "Verankert Feature Stores in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Drift Monitoring",
+        "level": "3★",
+        "context": "Verankert Drift Monitoring in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Prompt Engineering im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Feature Stores im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Prompt Engineering Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Prompt Engineering."
+      },
+      {
+        "title": "Neue Impulse zu Drift Monitoring",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Borealis."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Prompt Engineering",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Data Trust"
+    ]
+  },
+  "tobias-engel": {
+    "name": "Tobias Engel",
+    "role": "Backend Engineer",
+    "team": "Team Borealis",
+    "level": "Senior · 3★",
+    "focus": "Go",
+    "summary": "Tobias Engel arbeitet im Team Borealis als Backend Engineer und verankert Go gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Go",
+      "Event Streaming",
+      "API Governance"
+    ],
+    "skills": [
+      {
+        "name": "Go",
+        "level": "5★",
+        "context": "Verankert Go in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Event Streaming",
+        "level": "4★",
+        "context": "Verankert Event Streaming in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "API Governance",
+        "level": "3★",
+        "context": "Verankert API Governance in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Go im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Event Streaming im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Go Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Go."
+      },
+      {
+        "title": "Neue Impulse zu API Governance",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Borealis."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Go",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "lara-walther": {
+    "name": "Lara Walther",
+    "role": "UX Researcher",
+    "team": "Team Borealis",
+    "level": "Professional · 3★",
+    "focus": "Discovery",
+    "summary": "Lara Walther arbeitet im Team Borealis als UX Researcher und verankert Discovery gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Discovery",
+      "Jobs-to-be-done",
+      "Field Studies"
+    ],
+    "skills": [
+      {
+        "name": "Discovery",
+        "level": "5★",
+        "context": "Verankert Discovery in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Jobs-to-be-done",
+        "level": "4★",
+        "context": "Verankert Jobs-to-be-done in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Field Studies",
+        "level": "3★",
+        "context": "Verankert Field Studies in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Discovery im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Jobs-to-be-done im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Discovery Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Discovery."
+      },
+      {
+        "title": "Neue Impulse zu Field Studies",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Borealis."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Discovery",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "User Insights"
+    ]
+  },
+  "felix-hahn": {
+    "name": "Felix Hahn",
+    "role": "DevOps Engineer",
+    "team": "Team Borealis",
+    "level": "Senior · 3★",
+    "focus": "Infrastructure as Code",
+    "summary": "Felix Hahn arbeitet im Team Borealis als DevOps Engineer und verankert Infrastructure as Code gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Infrastructure as Code",
+      "Observability",
+      "On-call"
+    ],
+    "skills": [
+      {
+        "name": "Infrastructure as Code",
+        "level": "5★",
+        "context": "Verankert Infrastructure as Code in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Observability",
+        "level": "4★",
+        "context": "Verankert Observability in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "On-call",
+        "level": "3★",
+        "context": "Verankert On-call in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Infrastructure as Code im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Observability im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Infrastructure as Code Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Infrastructure as Code."
+      },
+      {
+        "title": "Neue Impulse zu On-call",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Borealis."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Infrastructure as Code",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "katja-meier": {
+    "name": "Katja Meier",
+    "role": "Scrum Master",
+    "team": "Team Borealis",
+    "level": "Lead · 4★",
+    "focus": "Team Health",
+    "summary": "Katja Meier arbeitet im Team Borealis als Scrum Master und verankert Team Health gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Team Health",
+      "Facilitation",
+      "Delivery Coaching"
+    ],
+    "skills": [
+      {
+        "name": "Team Health",
+        "level": "5★",
+        "context": "Verankert Team Health in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Facilitation",
+        "level": "4★",
+        "context": "Verankert Facilitation in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Delivery Coaching",
+        "level": "3★",
+        "context": "Verankert Delivery Coaching in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Team Health im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Facilitation im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Team Health Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Team Health."
+      },
+      {
+        "title": "Neue Impulse zu Delivery Coaching",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Borealis."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Team Health",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Mentoring"
+    ]
+  },
+  "oliver-sturm": {
+    "name": "Oliver Sturm",
+    "role": "Security Specialist",
+    "team": "Team Borealis",
+    "level": "Professional · 3★",
+    "focus": "Threat Modeling",
+    "summary": "Oliver Sturm arbeitet im Team Borealis als Security Specialist und verankert Threat Modeling gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Threat Modeling",
+      "Zero Trust",
+      "Compliance"
+    ],
+    "skills": [
+      {
+        "name": "Threat Modeling",
+        "level": "5★",
+        "context": "Verankert Threat Modeling in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Zero Trust",
+        "level": "4★",
+        "context": "Verankert Zero Trust in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Compliance",
+        "level": "3★",
+        "context": "Verankert Compliance in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Threat Modeling im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Zero Trust im Team Borealis durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Threat Modeling Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Threat Modeling."
+      },
+      {
+        "title": "Neue Impulse zu Compliance",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Borealis."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Threat Modeling",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Team Catalyst"
+    ]
+  },
+  "maja-riedl": {
+    "name": "Maja Riedl",
+    "role": "Data Engineer",
+    "team": "Team Cosmos",
+    "level": "Senior · 3★",
+    "focus": "Pipelines",
+    "summary": "Maja Riedl arbeitet im Team Cosmos als Data Engineer und verankert Pipelines gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Pipelines",
+      "dbt",
+      "Data Quality"
+    ],
+    "skills": [
+      {
+        "name": "Pipelines",
+        "level": "5★",
+        "context": "Verankert Pipelines in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "dbt",
+        "level": "4★",
+        "context": "Verankert dbt in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Data Quality",
+        "level": "3★",
+        "context": "Verankert Data Quality in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Pipelines im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert dbt im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Pipelines Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Pipelines."
+      },
+      {
+        "title": "Neue Impulse zu Data Quality",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Cosmos."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Pipelines",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar",
+      "Data Trust"
+    ]
+  },
+  "ben-falk": {
+    "name": "Ben Falk",
+    "role": "Site Reliability Engineer",
+    "team": "Team Cosmos",
+    "level": "Senior · 3★",
+    "focus": "Incident Response",
+    "summary": "Ben Falk arbeitet im Team Cosmos als Site Reliability Engineer und verankert Incident Response gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Incident Response",
+      "Chaos Engineering",
+      "Automation"
+    ],
+    "skills": [
+      {
+        "name": "Incident Response",
+        "level": "5★",
+        "context": "Verankert Incident Response in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Chaos Engineering",
+        "level": "4★",
+        "context": "Verankert Chaos Engineering in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Automation",
+        "level": "3★",
+        "context": "Verankert Automation in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Incident Response im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Chaos Engineering im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Incident Response Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Incident Response."
+      },
+      {
+        "title": "Neue Impulse zu Automation",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Cosmos."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Incident Response",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "lina-vogt": {
+    "name": "Lina Vogt",
+    "role": "UX Lead",
+    "team": "Team Cosmos",
+    "level": "Lead · 4★",
+    "focus": "Design Systems",
+    "summary": "Lina Vogt arbeitet im Team Cosmos als UX Lead und verankert Design Systems gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Design Systems",
+      "Accessibility",
+      "Prototyping"
+    ],
+    "skills": [
+      {
+        "name": "Design Systems",
+        "level": "5★",
+        "context": "Verankert Design Systems in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Accessibility",
+        "level": "4★",
+        "context": "Verankert Accessibility in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Prototyping",
+        "level": "3★",
+        "context": "Verankert Prototyping in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Design Systems im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Accessibility im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Design Systems Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Design Systems."
+      },
+      {
+        "title": "Neue Impulse zu Prototyping",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Cosmos."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Design Systems",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Mentoring",
+      "User Insights"
+    ]
+  },
+  "sophia-hartmann": {
+    "name": "Sophia Hartmann",
+    "role": "Mobile Engineer",
+    "team": "Team Cosmos",
+    "level": "Senior · 3★",
+    "focus": "Swift",
+    "summary": "Sophia Hartmann arbeitet im Team Cosmos als Mobile Engineer und verankert Swift gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Swift",
+      "Android",
+      "Offline First"
+    ],
+    "skills": [
+      {
+        "name": "Swift",
+        "level": "5★",
+        "context": "Verankert Swift in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Android",
+        "level": "4★",
+        "context": "Verankert Android in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Offline First",
+        "level": "3★",
+        "context": "Verankert Offline First in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Swift im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Android im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Swift Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Swift."
+      },
+      {
+        "title": "Neue Impulse zu Offline First",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Cosmos."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Swift",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "noah-keller": {
+    "name": "Noah Keller",
+    "role": "Product Manager",
+    "team": "Team Cosmos",
+    "level": "Lead · 4★",
+    "focus": "Value Mapping",
+    "summary": "Noah Keller arbeitet im Team Cosmos als Product Manager und verankert Value Mapping gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Value Mapping",
+      "Roadmapping",
+      "Stakeholder Management"
+    ],
+    "skills": [
+      {
+        "name": "Value Mapping",
+        "level": "5★",
+        "context": "Verankert Value Mapping in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Roadmapping",
+        "level": "4★",
+        "context": "Verankert Roadmapping in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Stakeholder Management",
+        "level": "3★",
+        "context": "Verankert Stakeholder Management in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Value Mapping im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert Roadmapping im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Value Mapping Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Value Mapping."
+      },
+      {
+        "title": "Neue Impulse zu Stakeholder Management",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Cosmos."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Value Mapping",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Outcome Focus"
+    ]
+  },
+  "mira-stein": {
+    "name": "Mira Stein",
+    "role": "Fullstack Engineer",
+    "team": "Team Cosmos",
+    "level": "Senior · 3★",
+    "focus": "Node.js",
+    "summary": "Mira Stein arbeitet im Team Cosmos als Fullstack Engineer und verankert Node.js gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Node.js",
+      "GraphQL",
+      "Cloud Functions"
+    ],
+    "skills": [
+      {
+        "name": "Node.js",
+        "level": "5★",
+        "context": "Verankert Node.js in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "GraphQL",
+        "level": "4★",
+        "context": "Verankert GraphQL in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Cloud Functions",
+        "level": "3★",
+        "context": "Verankert Cloud Functions in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Node.js im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert GraphQL im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Node.js Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Node.js."
+      },
+      {
+        "title": "Neue Impulse zu Cloud Functions",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Cosmos."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Node.js",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Tech Radar"
+    ]
+  },
+  "jakob-sommer": {
+    "name": "Jakob Sommer",
+    "role": "Business Analyst",
+    "team": "Team Cosmos",
+    "level": "Professional · 3★",
+    "focus": "Process Mining",
+    "summary": "Jakob Sommer arbeitet im Team Cosmos als Business Analyst und verankert Process Mining gemeinsam mit dem Team in produktionsreifen Journeys.",
+    "matrixSubtitle": "Zuletzt aktualisiert: Self-Assessment Q1 2026 + Chapter Review.",
+    "tags": [
+      "Process Mining",
+      "KPI Modeling",
+      "Risk Analysis"
+    ],
+    "skills": [
+      {
+        "name": "Process Mining",
+        "level": "5★",
+        "context": "Verankert Process Mining in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "KPI Modeling",
+        "level": "4★",
+        "context": "Verankert KPI Modeling in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      },
+      {
+        "name": "Risk Analysis",
+        "level": "3★",
+        "context": "Verankert Risk Analysis in Kundenprojekten und stellt Best Practices für das Chapter bereit."
+      }
+    ],
+    "strengths": [
+      "Skaliert Process Mining im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Skaliert KPI Modeling im Team Cosmos durch Pairing und beispielhafte Umsetzung.",
+      "Nutzt Feedback-Loops, um Fähigkeiten teamübergreifend zu festigen."
+    ],
+    "growth": [
+      {
+        "title": "Process Mining Enablement ausbauen",
+        "timeline": "Nächstes Quartal",
+        "description": "Dokumentiert Playbooks und plant Clinics zu Process Mining."
+      },
+      {
+        "title": "Neue Impulse zu Risk Analysis",
+        "timeline": "Lernfenster KW 22",
+        "description": "Teilnahme an Community Sessions und Transfer in das Team Cosmos."
+      },
+      {
+        "title": "Feedback vertiefen",
+        "timeline": "Monatlicher Rhythmus",
+        "description": "Nutzen von Peer Reviews und Shadowing, um Skill-Level transparent zu halten."
+      }
+    ],
+    "learning": [
+      {
+        "title": "Advanced Lab: Process Mining",
+        "timeline": "KW 18",
+        "description": "Hands-on Vertiefung, begleitet vom Chapter Lead."
+      },
+      {
+        "title": "Community Contribution",
+        "timeline": "Laufend",
+        "description": "Erstellt How-Tos und recorded Micro-Learnings für das Skill-Portal."
+      }
+    ],
+    "chips": [
+      "Team Catalyst"
+    ]
+  }
+}</script>
+  <script src="script.js"></script>
+</body>
+</html>

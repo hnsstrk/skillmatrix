@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body data-page="developer-profiles">
+<body data-page="developer-profiles" data-profile-page="list">
   <div class="app-shell">
     <aside class="sidebar">
       <div class="sidebar__branding">
@@ -165,6 +165,85 @@
         </div>
       </section>
 
+      <section class="panel skill-examples">
+        <header class="panel__header">
+          <div>
+            <h3>Skill-Beispiele nach Rolle</h3>
+            <p class="panel__subtitle">Nutze die Beispiele, um Profile mit konkreten Fähigkeiten zu füllen.</p>
+          </div>
+        </header>
+        <div class="skill-examples__grid">
+          <article class="skill-examples__group">
+            <h4 class="skill-examples__title">Backend Engineering</h4>
+            <ul class="skill-examples__list">
+              <li class="skill-examples__item">
+                <strong>Domain-sichere APIs</strong>
+                <span class="skill-examples__description">Contract Testing · Schema Governance · Rate Limiting</span>
+              </li>
+              <li class="skill-examples__item">
+                <strong>Event-getriebene Systeme</strong>
+                <span class="skill-examples__description">Kafka Streams · Outbox Pattern · Resiliente Consumers</span>
+              </li>
+              <li class="skill-examples__item">
+                <strong>Platform Compliance</strong>
+                <span class="skill-examples__description">Security Reviews · Secret Management · Audit Logging</span>
+              </li>
+            </ul>
+          </article>
+          <article class="skill-examples__group">
+            <h4 class="skill-examples__title">Frontend &amp; Experience</h4>
+            <ul class="skill-examples__list">
+              <li class="skill-examples__item">
+                <strong>Design-System Ownership</strong>
+                <span class="skill-examples__description">Design Tokens · Barrierefreiheit · Komponenten-Dokumentation</span>
+              </li>
+              <li class="skill-examples__item">
+                <strong>Performance Patterns</strong>
+                <span class="skill-examples__description">Code Splitting · Core Web Vitals · Progressive Enhancement</span>
+              </li>
+              <li class="skill-examples__item">
+                <strong>Collaborative Delivery</strong>
+                <span class="skill-examples__description">Design Critiques · Pairing · Story Mapping</span>
+              </li>
+            </ul>
+          </article>
+          <article class="skill-examples__group">
+            <h4 class="skill-examples__title">Data &amp; AI Enablement</h4>
+            <ul class="skill-examples__list">
+              <li class="skill-examples__item">
+                <strong>Produktionsreife Modelle</strong>
+                <span class="skill-examples__description">Retraining Pipelines · Feature Stores · Drift Monitoring</span>
+              </li>
+              <li class="skill-examples__item">
+                <strong>Responsible AI</strong>
+                <span class="skill-examples__description">Bias Audits · Explainability · Data Governance</span>
+              </li>
+              <li class="skill-examples__item">
+                <strong>Self-Service Analytics</strong>
+                <span class="skill-examples__description">dbt Assets · Metric Layer · Enablement Sessions</span>
+              </li>
+            </ul>
+          </article>
+          <article class="skill-examples__group">
+            <h4 class="skill-examples__title">Delivery &amp; Leadership</h4>
+            <ul class="skill-examples__list">
+              <li class="skill-examples__item">
+                <strong>Team Enablement</strong>
+                <span class="skill-examples__description">Coaching Clinics · Skill Radar · Community of Practice</span>
+              </li>
+              <li class="skill-examples__item">
+                <strong>Outcome Tracking</strong>
+                <span class="skill-examples__description">OKR Katas · Value Streams · Impact Reviews</span>
+              </li>
+              <li class="skill-examples__item">
+                <strong>Continuous Improvement</strong>
+                <span class="skill-examples__description">Experiment Backlogs · Facilitated Retros · Playbook Updates</span>
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
       <section class="panel-grid panel-grid--responsive">
         <article class="panel team-card">
           <header class="panel__header">
@@ -176,39 +255,53 @@
           </header>
           <ul class="team-card__members">
             <li>
-              <span class="team-card__name">Sarah König</span>
-              <span class="team-card__role">Lead Developer</span>
-              <span class="team-card__skills">Secure Coding · CI/CD · Prompt Patterns</span>
+              <a class="team-card__member-link" href="developer-profile.html#sarah-konig" data-profile-link="sarah-konig" data-profile-name="Sarah König" data-profile-role="Lead Developer" data-profile-team="Team Aurora" data-profile-tags="Secure Coding|CI/CD|Prompt Patterns">
+                <span class="team-card__name">Sarah König</span>
+                <span class="team-card__role">Lead Developer</span>
+                <span class="team-card__skills">Secure Coding · CI/CD · Prompt Patterns</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Milan Ortiz</span>
-              <span class="team-card__role">MLOps Engineer</span>
-              <span class="team-card__skills">Model Ops · Terraform · Observability</span>
+              <a class="team-card__member-link" href="developer-profile.html#milan-ortiz" data-profile-link="milan-ortiz" data-profile-name="Milan Ortiz" data-profile-role="MLOps Engineer" data-profile-team="Team Aurora" data-profile-tags="Model Ops|Terraform|Observability">
+                <span class="team-card__name">Milan Ortiz</span>
+                <span class="team-card__role">MLOps Engineer</span>
+                <span class="team-card__skills">Model Ops · Terraform · Observability</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Lea Fischer</span>
-              <span class="team-card__role">Product Designer</span>
-              <span class="team-card__skills">Service Design · UX Research · Facilitation</span>
+              <a class="team-card__member-link" href="developer-profile.html#lea-fischer" data-profile-link="lea-fischer" data-profile-name="Lea Fischer" data-profile-role="Product Designer" data-profile-team="Team Aurora" data-profile-tags="Service Design|UX Research|Facilitation">
+                <span class="team-card__name">Lea Fischer</span>
+                <span class="team-card__role">Product Designer</span>
+                <span class="team-card__skills">Service Design · UX Research · Facilitation</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Jonas Brandt</span>
-              <span class="team-card__role">Backend Engineer</span>
-              <span class="team-card__skills">Kotlin · Event Sourcing · API Security</span>
+              <a class="team-card__member-link" href="developer-profile.html#jonas-brandt" data-profile-link="jonas-brandt" data-profile-name="Jonas Brandt" data-profile-role="Backend Engineer" data-profile-team="Team Aurora" data-profile-tags="Kotlin|Event Sourcing|API Security">
+                <span class="team-card__name">Jonas Brandt</span>
+                <span class="team-card__role">Backend Engineer</span>
+                <span class="team-card__skills">Kotlin · Event Sourcing · API Security</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Emma Schulte</span>
-              <span class="team-card__role">QA Lead</span>
-              <span class="team-card__skills">Testautomation · Accessibility Audits · Load Testing</span>
+              <a class="team-card__member-link" href="developer-profile.html#emma-schulte" data-profile-link="emma-schulte" data-profile-name="Emma Schulte" data-profile-role="QA Lead" data-profile-team="Team Aurora" data-profile-tags="Testautomation|Accessibility Audits|Load Testing">
+                <span class="team-card__name">Emma Schulte</span>
+                <span class="team-card__role">QA Lead</span>
+                <span class="team-card__skills">Testautomation · Accessibility Audits · Load Testing</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Marco Petrov</span>
-              <span class="team-card__role">Frontend Engineer</span>
-              <span class="team-card__skills">React · Design Systems · Web Performance</span>
+              <a class="team-card__member-link" href="developer-profile.html#marco-petrov" data-profile-link="marco-petrov" data-profile-name="Marco Petrov" data-profile-role="Frontend Engineer" data-profile-team="Team Aurora" data-profile-tags="React|Design Systems|Web Performance">
+                <span class="team-card__name">Marco Petrov</span>
+                <span class="team-card__role">Frontend Engineer</span>
+                <span class="team-card__skills">React · Design Systems · Web Performance</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Helena Krüger</span>
-              <span class="team-card__role">Agile Coach</span>
-              <span class="team-card__skills">OKRs · Retros · Stakeholder Alignment</span>
+              <a class="team-card__member-link" href="developer-profile.html#helena-kruger" data-profile-link="helena-kruger" data-profile-name="Helena Krüger" data-profile-role="Agile Coach" data-profile-team="Team Aurora" data-profile-tags="OKRs|Retros|Stakeholder Alignment">
+                <span class="team-card__name">Helena Krüger</span>
+                <span class="team-card__role">Agile Coach</span>
+                <span class="team-card__skills">OKRs · Retros · Stakeholder Alignment</span>
+              </a>
             </li>
           </ul>
           <footer class="team-card__footer">
@@ -226,39 +319,53 @@
           </header>
           <ul class="team-card__members">
             <li>
-              <span class="team-card__name">Daniel Weber</span>
-              <span class="team-card__role">Platform Architect</span>
-              <span class="team-card__skills">Kubernetes · Security Hardening · FinOps</span>
+              <a class="team-card__member-link" href="developer-profile.html#daniel-weber" data-profile-link="daniel-weber" data-profile-name="Daniel Weber" data-profile-role="Platform Architect" data-profile-team="Team Borealis" data-profile-tags="Kubernetes|Security Hardening|FinOps">
+                <span class="team-card__name">Daniel Weber</span>
+                <span class="team-card__role">Platform Architect</span>
+                <span class="team-card__skills">Kubernetes · Security Hardening · FinOps</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Nina Berger</span>
-              <span class="team-card__role">Data Scientist</span>
-              <span class="team-card__skills">Prompt Engineering · Feature Stores · Drift Monitoring</span>
+              <a class="team-card__member-link" href="developer-profile.html#nina-berger" data-profile-link="nina-berger" data-profile-name="Nina Berger" data-profile-role="Data Scientist" data-profile-team="Team Borealis" data-profile-tags="Prompt Engineering|Feature Stores|Drift Monitoring">
+                <span class="team-card__name">Nina Berger</span>
+                <span class="team-card__role">Data Scientist</span>
+                <span class="team-card__skills">Prompt Engineering · Feature Stores · Drift Monitoring</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Tobias Engel</span>
-              <span class="team-card__role">Backend Engineer</span>
-              <span class="team-card__skills">Go · Event Streaming · API Governance</span>
+              <a class="team-card__member-link" href="developer-profile.html#tobias-engel" data-profile-link="tobias-engel" data-profile-name="Tobias Engel" data-profile-role="Backend Engineer" data-profile-team="Team Borealis" data-profile-tags="Go|Event Streaming|API Governance">
+                <span class="team-card__name">Tobias Engel</span>
+                <span class="team-card__role">Backend Engineer</span>
+                <span class="team-card__skills">Go · Event Streaming · API Governance</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Lara Walther</span>
-              <span class="team-card__role">UX Researcher</span>
-              <span class="team-card__skills">Discovery · Jobs-to-be-done · Field Studies</span>
+              <a class="team-card__member-link" href="developer-profile.html#lara-walther" data-profile-link="lara-walther" data-profile-name="Lara Walther" data-profile-role="UX Researcher" data-profile-team="Team Borealis" data-profile-tags="Discovery|Jobs-to-be-done|Field Studies">
+                <span class="team-card__name">Lara Walther</span>
+                <span class="team-card__role">UX Researcher</span>
+                <span class="team-card__skills">Discovery · Jobs-to-be-done · Field Studies</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Felix Hahn</span>
-              <span class="team-card__role">DevOps Engineer</span>
-              <span class="team-card__skills">Infrastructure as Code · Observability · On-call</span>
+              <a class="team-card__member-link" href="developer-profile.html#felix-hahn" data-profile-link="felix-hahn" data-profile-name="Felix Hahn" data-profile-role="DevOps Engineer" data-profile-team="Team Borealis" data-profile-tags="Infrastructure as Code|Observability|On-call">
+                <span class="team-card__name">Felix Hahn</span>
+                <span class="team-card__role">DevOps Engineer</span>
+                <span class="team-card__skills">Infrastructure as Code · Observability · On-call</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Katja Meier</span>
-              <span class="team-card__role">Scrum Master</span>
-              <span class="team-card__skills">Team Health · Facilitation · Delivery Coaching</span>
+              <a class="team-card__member-link" href="developer-profile.html#katja-meier" data-profile-link="katja-meier" data-profile-name="Katja Meier" data-profile-role="Scrum Master" data-profile-team="Team Borealis" data-profile-tags="Team Health|Facilitation|Delivery Coaching">
+                <span class="team-card__name">Katja Meier</span>
+                <span class="team-card__role">Scrum Master</span>
+                <span class="team-card__skills">Team Health · Facilitation · Delivery Coaching</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Oliver Sturm</span>
-              <span class="team-card__role">Security Specialist</span>
-              <span class="team-card__skills">Threat Modeling · Zero Trust · Compliance</span>
+              <a class="team-card__member-link" href="developer-profile.html#oliver-sturm" data-profile-link="oliver-sturm" data-profile-name="Oliver Sturm" data-profile-role="Security Specialist" data-profile-team="Team Borealis" data-profile-tags="Threat Modeling|Zero Trust|Compliance">
+                <span class="team-card__name">Oliver Sturm</span>
+                <span class="team-card__role">Security Specialist</span>
+                <span class="team-card__skills">Threat Modeling · Zero Trust · Compliance</span>
+              </a>
             </li>
           </ul>
           <footer class="team-card__footer">
@@ -276,39 +383,53 @@
           </header>
           <ul class="team-card__members">
             <li>
-              <span class="team-card__name">Maja Riedl</span>
-              <span class="team-card__role">Data Engineer</span>
-              <span class="team-card__skills">Pipelines · dbt · Data Quality</span>
+              <a class="team-card__member-link" href="developer-profile.html#maja-riedl" data-profile-link="maja-riedl" data-profile-name="Maja Riedl" data-profile-role="Data Engineer" data-profile-team="Team Cosmos" data-profile-tags="Pipelines|dbt|Data Quality">
+                <span class="team-card__name">Maja Riedl</span>
+                <span class="team-card__role">Data Engineer</span>
+                <span class="team-card__skills">Pipelines · dbt · Data Quality</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Ben Falk</span>
-              <span class="team-card__role">Site Reliability Engineer</span>
-              <span class="team-card__skills">Incident Response · Chaos Engineering · Automation</span>
+              <a class="team-card__member-link" href="developer-profile.html#ben-falk" data-profile-link="ben-falk" data-profile-name="Ben Falk" data-profile-role="Site Reliability Engineer" data-profile-team="Team Cosmos" data-profile-tags="Incident Response|Chaos Engineering|Automation">
+                <span class="team-card__name">Ben Falk</span>
+                <span class="team-card__role">Site Reliability Engineer</span>
+                <span class="team-card__skills">Incident Response · Chaos Engineering · Automation</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Lina Vogt</span>
-              <span class="team-card__role">UX Lead</span>
-              <span class="team-card__skills">Design Systems · Accessibility · Prototyping</span>
+              <a class="team-card__member-link" href="developer-profile.html#lina-vogt" data-profile-link="lina-vogt" data-profile-name="Lina Vogt" data-profile-role="UX Lead" data-profile-team="Team Cosmos" data-profile-tags="Design Systems|Accessibility|Prototyping">
+                <span class="team-card__name">Lina Vogt</span>
+                <span class="team-card__role">UX Lead</span>
+                <span class="team-card__skills">Design Systems · Accessibility · Prototyping</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Sophia Hartmann</span>
-              <span class="team-card__role">Mobile Engineer</span>
-              <span class="team-card__skills">Swift · Android · Offline First</span>
+              <a class="team-card__member-link" href="developer-profile.html#sophia-hartmann" data-profile-link="sophia-hartmann" data-profile-name="Sophia Hartmann" data-profile-role="Mobile Engineer" data-profile-team="Team Cosmos" data-profile-tags="Swift|Android|Offline First">
+                <span class="team-card__name">Sophia Hartmann</span>
+                <span class="team-card__role">Mobile Engineer</span>
+                <span class="team-card__skills">Swift · Android · Offline First</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Noah Keller</span>
-              <span class="team-card__role">Product Manager</span>
-              <span class="team-card__skills">Value Mapping · Roadmapping · Stakeholder Management</span>
+              <a class="team-card__member-link" href="developer-profile.html#noah-keller" data-profile-link="noah-keller" data-profile-name="Noah Keller" data-profile-role="Product Manager" data-profile-team="Team Cosmos" data-profile-tags="Value Mapping|Roadmapping|Stakeholder Management">
+                <span class="team-card__name">Noah Keller</span>
+                <span class="team-card__role">Product Manager</span>
+                <span class="team-card__skills">Value Mapping · Roadmapping · Stakeholder Management</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Mira Stein</span>
-              <span class="team-card__role">Fullstack Engineer</span>
-              <span class="team-card__skills">Node.js · GraphQL · Cloud Functions</span>
+              <a class="team-card__member-link" href="developer-profile.html#mira-stein" data-profile-link="mira-stein" data-profile-name="Mira Stein" data-profile-role="Fullstack Engineer" data-profile-team="Team Cosmos" data-profile-tags="Node.js|GraphQL|Cloud Functions">
+                <span class="team-card__name">Mira Stein</span>
+                <span class="team-card__role">Fullstack Engineer</span>
+                <span class="team-card__skills">Node.js · GraphQL · Cloud Functions</span>
+              </a>
             </li>
             <li>
-              <span class="team-card__name">Jakob Sommer</span>
-              <span class="team-card__role">Business Analyst</span>
-              <span class="team-card__skills">Process Mining · KPI Modeling · Risk Analysis</span>
+              <a class="team-card__member-link" href="developer-profile.html#jakob-sommer" data-profile-link="jakob-sommer" data-profile-name="Jakob Sommer" data-profile-role="Business Analyst" data-profile-team="Team Cosmos" data-profile-tags="Process Mining|KPI Modeling|Risk Analysis">
+                <span class="team-card__name">Jakob Sommer</span>
+                <span class="team-card__role">Business Analyst</span>
+                <span class="team-card__skills">Process Mining · KPI Modeling · Risk Analysis</span>
+              </a>
             </li>
           </ul>
           <footer class="team-card__footer">
