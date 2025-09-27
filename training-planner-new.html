@@ -142,72 +142,100 @@
         </div>
       </header>
 
-      <section class="panel-grid panel-grid--two">
-        <article class="panel">
-          <header class="panel__header">
-            <h3>Rahmendaten</h3>
-          </header>
-          <form class="project-form">
-            <label>
-              <span>Lehrgangstitel</span>
-              <input type="text" placeholder="z. B. Secure DevOps Bootcamp" />
-            </label>
-            <label>
-              <span>Schwerpunkt</span>
-              <select>
-                <option>Security</option>
-                <option>Cloud / Plattform</option>
-                <option>Modern Development</option>
-                <option>Data &amp; AI</option>
-              </select>
-            </label>
-            <label>
-              <span>Start / Ende</span>
-              <input type="text" placeholder="z. B. KW 45 – KW 48" />
-            </label>
-            <label>
-              <span>Format</span>
-              <select>
-                <option>Präsenz</option>
-                <option>Remote</option>
-                <option>Hybrid</option>
-              </select>
-            </label>
-            <div class="project-form__actions">
-              <button class="button button--ghost">Zwischenspeichern</button>
-              <button class="button button--primary">Weiter zu Teilnehmern</button>
-            </div>
-          </form>
-        </article>
-
-        <article class="panel">
-          <header class="panel__header">
-            <h3>Teilnehmer &amp; Ressourcen</h3>
-          </header>
-          <form class="project-form">
-            <label>
-              <span>Zielgruppen</span>
-              <input type="text" placeholder="z. B. DevOps Engineers, Chapter Leads" />
-            </label>
-            <label>
-              <span>Skill-Ziele</span>
-              <textarea rows="4" placeholder="Welche Skill-Gaps sollen geschlossen werden?"></textarea>
-            </label>
-            <label>
-              <span>Mentor:innen / Trainer</span>
-              <input type="text" placeholder="Wer begleitet den Lehrgang?" />
-            </label>
-            <label>
-              <span>Erfolgskriterien</span>
-              <textarea rows="3" placeholder="Wie wird der Lernerfolg gemessen?"></textarea>
-            </label>
-            <div class="project-form__actions">
-              <button class="button button--ghost">Agenda teilen</button>
-              <button class="button button--primary">Lehrgang veröffentlichen</button>
-            </div>
-          </form>
-        </article>
+      <section class="training-create">
+        <div class="panel-grid panel-grid--two">
+          <article class="panel">
+            <header class="panel__header">
+              <h3>Lehrgangsdaten</h3>
+              <p class="panel__subtitle">Trage die Pflichtangaben ein, bevor du Inhalte und Teilnehmer planst.</p>
+            </header>
+            <form class="project-form" autocomplete="off">
+              <label>
+                <span>Lehrgangsname *</span>
+                <input type="text" placeholder="z. B. Secure DevOps Bootcamp" required />
+              </label>
+              <label>
+                <span>Lehrgangsnummer *</span>
+                <input type="text" placeholder="z. B. TRN-2025-017" required />
+              </label>
+              <label>
+                <span>Anbieter *</span>
+                <select required>
+                  <option value="">Anbieter auswählen</option>
+                  <option>oose</option>
+                  <option>Integrata Cegos</option>
+                  <option>Udemy</option>
+                  <option>TechAcademy</option>
+                  <option>Internes Chapter</option>
+                </select>
+              </label>
+              <label>
+                <span>Thema *</span>
+                <input type="text" list="training-topics" placeholder="Welche Fähigkeit wird gestärkt?" required />
+                <span class="form-hint">Das Thema sollte eine Kompetenz aus dem Katalog abbilden oder unterstützen.</span>
+              </label>
+              <label>
+                <span>Beschreibung *</span>
+                <textarea rows="6" placeholder="Beschreibe Zielsetzung, Inhalte und erwartete Lernergebnisse." required></textarea>
+              </label>
+              <div class="project-form__actions">
+                <button class="button button--ghost">Als Entwurf sichern</button>
+                <button class="button button--primary">Pflichtangaben bestätigen</button>
+              </div>
+            </form>
+            <datalist id="training-topics">
+              <option value="Secure Coding"></option>
+              <option value="DevSecOps Automation"></option>
+              <option value="Cloud Infrastruktur &amp; Observability"></option>
+              <option value="Agile Leadership"></option>
+              <option value="Prompt Engineering &amp; AI Literacy"></option>
+            </datalist>
+          </article>
+          <article class="panel">
+            <header class="panel__header">
+              <h3>Kompetenzbezug &amp; Lernziele</h3>
+              <p class="panel__subtitle">Lege fest, welche Skills adressiert werden und wie der Erfolg sichtbar wird.</p>
+            </header>
+            <form class="project-form">
+              <label>
+                <span>Primäre Kompetenz</span>
+                <select>
+                  <option>Secure Coding</option>
+                  <option>DevOps Tooling</option>
+                  <option>Data &amp; AI</option>
+                  <option>Product Discovery</option>
+                  <option>Leadership &amp; Coaching</option>
+                </select>
+              </label>
+              <label>
+                <span>Unterstützte Skills</span>
+                <select multiple>
+                  <option>Threat Modelling</option>
+                  <option>Infrastructure as Code</option>
+                  <option>Monitoring &amp; Observability</option>
+                  <option>Team Facilitation</option>
+                  <option>Story Mapping</option>
+                  <option>Machine Learning Fundamentals</option>
+                </select>
+                <span class="form-hint">Markiere alle Fähigkeiten, die durch den Lehrgang messbar gestärkt werden.</span>
+              </label>
+              <label>
+                <span>Lernziele</span>
+                <textarea rows="4" placeholder="Welche Kompetenz oder welches Verhalten sollen Teilnehmende nachweisen können?"></textarea>
+              </label>
+              <label>
+                <span>Erfolgsnachweise</span>
+                <textarea rows="3" placeholder="z. B. Abschlussprojekt, Zertifizierung, Peer Review"></textarea>
+              </label>
+              <div class="project-form__actions">
+                <button class="button button--ghost">Skill-Gaps prüfen</button>
+                <button class="button button--primary">Lehrgang speichern</button>
+              </div>
+            </form>
+          </article>
+        </div>
       </section>
+
     </main>
   </div>
   <script src="script.js"></script>
